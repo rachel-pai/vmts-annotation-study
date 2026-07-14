@@ -5,13 +5,14 @@
   <meta name="robots" content="noindex,nofollow">
   <title>Versioned Memory Annotation Study</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="ux.css">
 </head>
 <body>
   <header class="topbar"><div class="brand">VMTS Human Validation</div><div id="saveState" class="save-state">Not connected</div></header>
   <main>
     <section id="intro" class="screen active">
       <div class="hero"><p class="eyebrow">Research annotation study</p><h1>How should an agent respond when persistent information changes?</h1>
-      <p class="lede">You will compare an earlier instruction with its current version, then independently judge one candidate action and one persistent write.</p></div>
+      <p class="lede">You will compare an earlier instruction with its current version, then make four judgments and one confidence rating.</p></div>
       <div class="card grid-two"><div><h2>What you will do</h2><ul><li>Review the label definitions before starting.</li><li>Annotate 36 study items in two sessions of about 18.</li><li>Judge only the text shown—do not search externally.</li><li>Work independently and do not discuss answers.</li></ul></div>
       <div><h2>Time and privacy</h2><ul><li>About 45–110 minutes total.</li><li>You may stop and resume on the same browser.</li><li>We store an anonymous participant ID, labels, confidence, notes, and timestamps.</li><li>Do not enter personal information in notes.</li></ul></div></div>
       <div class="card consent"><label><input id="consentCheck" type="checkbox"> I am at least 18, have read the information above, and voluntarily consent to participate.</label>
@@ -21,13 +22,13 @@
 
     <section id="instructions" class="screen">
       <p class="eyebrow">Instructions</p><h1>Use the current version as the reference</h1>
-      <div class="card"><h2>Four judgments</h2><div class="definition-grid">
+      <div class="card"><h2>Four judgments + one confidence rating</h2><div class="definition-grid">
         <div><b>Revision relation</b><span>How the current instruction changes the earlier one.</span></div>
         <div><b>Candidate action</b><span>Whether the action follows the current or legacy instruction.</span></div>
-        <div><b>Persistent write</b><span>What a future agent would inherit from the saved text.</span></div>
+        <div><b>Saved write</b><span>What a future agent would inherit from the candidate saved text.</span></div>
         <div><b>Preservation</b><span>Whether the still-valid clause remains intact.</span></div>
       </div></div>
-      <div class="card callout"><b>Important:</b> “Current action” and “current write” are separate. An action may be correct while its saved write remains mixed or legacy.</div>
+      <div class="card callout"><b>Important:</b> The candidate action and candidate saved write are separate. An action may be correct while its saved write remains mixed or legacy.</div>
       <button id="startBtn" class="primary">Start annotation</button>
     </section>
 
@@ -35,21 +36,22 @@
       <div class="progress-wrap"><div><span id="counter">Item 1 of 36</span><span id="sessionHint"></span></div><div class="progress"><i id="progressBar"></i></div></div>
       <article class="task-layout">
         <div class="evidence-column">
-          <section class="version-card old"><span>Earlier version</span><p id="oldAction"></p></section>
-          <section class="version-card current"><span>Current version</span><p id="currentAction"></p></section>
-          <details><summary>Clause-level evidence</summary><dl><dt>Still valid</dt><dd id="preserved"></dd><dt>Invalidated</dt><dd id="invalidated"></dd><dt>New</dt><dd id="newClause"></dd></dl></details>
+          <div id="truncationWarning" class="truncation-warning" role="note" hidden></div>
+          <section class="change-summary"><h2>Change summary</h2><dl><dt class="kept">Still valid</dt><dd id="preserved"></dd><dt class="removed">Invalidated</dt><dd id="invalidated"></dd><dt class="added">New</dt><dd id="newClause"></dd></dl></section>
+          <details class="full-version"><summary>Earlier instruction <span>Show full text</span></summary><p id="oldAction"></p></details>
+          <details class="full-version"><summary>Current instruction <span>Show full text</span></summary><p id="currentAction"></p></details>
           <section class="candidate"><span>Candidate action</span><p id="candidateAction"></p></section>
-          <section class="candidate"><span>Candidate persistent write</span><p id="candidateWrite"></p></section>
+          <section class="candidate"><span>Candidate saved write</span><p id="candidateWrite"></p></section>
         </div>
         <form id="annotationForm" class="question-column">
-          <fieldset><legend>1. Revision relation</legend><div id="revisionOptions" class="options"></div></fieldset>
-          <fieldset><legend>2. Candidate action consistency</legend><div id="actionOptions" class="options"></div></fieldset>
-          <fieldset><legend>3. Candidate write consistency</legend><div id="writeOptions" class="options"></div></fieldset>
-          <fieldset><legend>4. Mixed-validity preservation</legend><div id="preservationOptions" class="options"></div></fieldset>
-          <fieldset><legend>5. Confidence</legend><div id="confidenceOptions" class="confidence"></div></fieldset>
+          <fieldset><legend>1. How did the instruction change?</legend><div id="revisionOptions" class="options"></div></fieldset>
+          <fieldset><legend>2. Does the action follow the current instruction?</legend><div id="actionOptions" class="options"></div></fieldset>
+          <fieldset><legend>3. What would the saved write make a future agent believe?</legend><div id="writeOptions" class="options"></div></fieldset>
+          <fieldset><legend>4. Was the still-valid clause preserved?</legend><div id="preservationOptions" class="options"></div></fieldset>
+          <fieldset><legend>5. How confident are you?</legend><div id="confidenceOptions" class="confidence"></div><div class="confidence-scale"><span>1 = Very uncertain</span><span>5 = Very confident</span></div></fieldset>
           <label class="field">Optional note<textarea id="notes" maxlength="500" placeholder="Explain uncertainty; do not include personal information."></textarea></label>
           <p id="formError" class="error" role="alert"></p>
-          <div class="actions"><button type="button" id="backBtn" class="secondary">Back</button><button type="submit" class="primary">Save &amp; next</button></div>
+          <div class="actions"><button type="button" id="clearBtn" class="text-button">Clear choices</button><span><button type="button" id="backBtn" class="secondary">Back</button><button type="submit" class="primary">Save &amp; next</button></span></div>
         </form>
       </article>
     </section>

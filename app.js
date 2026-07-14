@@ -2,16 +2,16 @@ import{firebaseConfig}from"./firebase-config.js";
 
 const $=s=>document.querySelector(s),screens=["intro","instructions","annotate","complete"];
 const labels={
- revision_relation_label:[["replace","Replace"],["narrow","Narrow"],["expand","Expand"],["exception","Exception"],["cancel","Cancel"],["reschedule","Reschedule"],["clarify","Clarify"],["unclear","Unclear"]],
- action_consistency_label:[["current","Current"],["legacy","Legacy"],["mixed","Mixed"],["abstention","Abstention"],["unclear","Unclear"]],
- write_consistency_label:[["current","Current"],["legacy","Legacy"],["mixed","Mixed"],["empty","Empty"],["unclear","Unclear"]],
- mixed_validity_preservation_label:[["preserved","Preserved"],["corrupted_or_omitted","Corrupted / omitted"],["not_applicable","Not applicable"],["unclear","Unclear"]]
+ revision_relation_label:[["replace","Replace","Earlier instruction is fully superseded"],["narrow","Narrow","Current instruction reduces the allowed scope"],["expand","Expand","Current instruction adds allowed scope"],["exception","Exception","Current instruction adds a special-case override"],["cancel","Cancel","Earlier instruction is withdrawn"],["reschedule","Reschedule","Timing changes while the task remains"],["clarify","Clarify","Meaning is clearer without a substantive change"],["unclear","Unclear","The relation cannot be determined"]],
+ action_consistency_label:[["current","Current","Follows the current instruction"],["legacy","Legacy","Follows the earlier instruction instead"],["mixed","Mixed","Combines current and legacy requirements"],["abstention","Abstention","Explicitly defers, verifies, or does not act"],["unclear","Unclear","Cannot determine from the text"]],
+ write_consistency_label:[["current","Current","Future agent inherits the current rule"],["legacy","Legacy","Future agent inherits the earlier rule"],["mixed","Mixed","Combines current and legacy rules"],["empty","Empty","No persistent instruction is saved"],["unclear","Unclear","Cannot determine what is inherited"]],
+ mixed_validity_preservation_label:[["preserved","Preserved","Still-valid clause is retained correctly"],["corrupted_or_omitted","Corrupted / omitted","Still-valid clause is changed or missing"],["not_applicable","Not applicable","No still-valid clause is relevant"],["unclear","Unclear","Preservation cannot be determined"]]
 };
 const state={annotator:null,items:[],tasks:new Map(),index:0,answers:{},uid:null,db:null,online:false};
 
 function show(id){screens.forEach(x=>$("#"+x).classList.toggle("active",x===id));scrollTo({top:0,behavior:"smooth"})}
 function storageKey(){return`vmts_annotations_${state.annotator}`}
-function optionHTML(name,values){return values.map(([v,l])=>`<label class="option"><input type="radio" name="${name}" value="${v}"><span>${l}</span></label>`).join("")}
+function optionHTML(name,values){return values.map(([v,l,h])=>`<label class="option"><input type="radio" name="${name}" value="${v}"><span><b>${l}</b>${h?`<small>${h}</small>`:""}</span></label>`).join("")}
 function initOptions(){
  $("#revisionOptions").innerHTML=optionHTML("revision_relation_label",labels.revision_relation_label);
  $("#actionOptions").innerHTML=optionHTML("action_consistency_label",labels.action_consistency_label);
@@ -34,7 +34,9 @@ function restore(){try{state.answers=JSON.parse(localStorage.getItem(storageKey(
 function render(){
  if(state.index>=state.items.length)return finish();const id=state.items[state.index],t=state.tasks.get(id),a=state.answers[id]||{};
  $("#counter").textContent=`Item ${state.index+1} of ${state.items.length}`;$("#sessionHint").textContent=state.index===18?"Suggested break point":"";$("#progressBar").style.width=`${100*state.index/state.items.length}%`;
- [["oldAction","old_action"],["currentAction","current_action"],["preserved","preserved_clause"],["invalidated","invalidated_clause"],["newClause","new_clause"],["candidateAction","candidate_action"],["candidateWrite","candidate_write"]].forEach(([el,k])=>$("#"+el).textContent=t[k]||"(empty)");
+ const fieldMap=[["oldAction","old_action","Earlier instruction"],["currentAction","current_action","Current instruction"],["preserved","preserved_clause","Still-valid clause"],["invalidated","invalidated_clause","Invalidated clause"],["newClause","new_clause","New clause"],["candidateAction","candidate_action","Candidate action"],["candidateWrite","candidate_write","Candidate saved write"]],truncated=new Set(t.truncated_fields||[]);
+ fieldMap.forEach(([el,k])=>{const node=$("#"+el);node.textContent=t[k]||"(empty)";node.classList.toggle("is-truncated",truncated.has(k))});
+ const names=fieldMap.filter(([,k])=>truncated.has(k)).map(([, ,name])=>name),warning=$("#truncationWarning");warning.hidden=!names.length;warning.textContent=names.length?`Source-data warning: ${names.join(", ")} reached the generation limit and may be truncated. Treat the visible text as incomplete.`:"";
  $("#annotationForm").reset();Object.entries(a).forEach(([k,v])=>{const x=document.querySelector(`[name="${k}"][value="${CSS.escape(String(v))}"]`);if(x)x.checked=true});$("#notes").value=a.notes||"";$("#formError").textContent="";
 }
 function collect(){const fd=new FormData($("#annotationForm")),o={};for(const k of Object.keys(labels))o[k]=fd.get(k);o.confidence_1_to_5=fd.get("confidence_1_to_5");o.notes=$("#notes").value.trim();return o}
@@ -52,3 +54,4 @@ $("#beginBtn").onclick=async()=>{const annotator=(new URLSearchParams(location.s
 $("#startBtn").onclick=()=>{if(state.index>=36)return finish();show("annotate");render()};
 $("#annotationForm").onsubmit=async e=>{e.preventDefault();if(await saveCurrent()){state.index++;render()}};
 $("#backBtn").onclick=()=>{if(state.index>0){state.index--;render()}};$("#exportBtn").onclick=download;
+$("#clearBtn").onclick=()=>{$("#annotationForm").reset();$("#notes").value="";$("#formError").textContent=""};

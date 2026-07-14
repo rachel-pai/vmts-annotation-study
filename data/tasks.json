@@ -9,7 +9,11 @@
     "invalidated_clause": "V0 Section 4(a) wording and placement (default data controller description and the DPA handoff) together with V0 Section 4(b) cross-reference to “Section 4(c) below” is invalidated by the reordered structure in V1 (telemetry consent becomes Section 4(a) and cross-reference changes).",
     "new_clause": "V1 Section 4(a): Consent to Data Collection — telemetry collection and use permitted under the GitHub Data Protection Agreement or GitHub Privacy Statement, subject to the limitations in Section 4(b) below; your use operates as consent to these practices.",
     "candidate_action": "Reorder and renumber Section 4 clauses by moving the telemetry consent clause (V0 Section 4(b)) before the processing-of-personal-data section, and update cross-references accordingly.",
-    "candidate_write": "Section 4 ordering update (V1):\n- Move telemetry consent clause to be first in Section 4.\n- Renumber as: Section 4(a) “Consent to Data Collection — telemetry collection and use permitted under the GitHub Data Protection Agreement or GitHub Privacy Statement, subject to the limitations in Section 4(b); your use operates as consent to these practices.”\n- Ensure the processing-of-personal-data section comes after 4(a).\n- Update internal cross-references: any prior references to “limitations in 4(c)"
+    "candidate_write": "Section 4 ordering update (V1):\n- Move telemetry consent clause to be first in Section 4.\n- Renumber as: Section 4(a) “Consent to Data Collection — telemetry collection and use permitted under the GitHub Data Protection Agreement or GitHub Privacy Statement, subject to the limitations in Section 4(b); your use operates as consent to these practices.”\n- Ensure the processing-of-personal-data section comes after 4(a).\n- Update internal cross-references: any prior references to “limitations in 4(c)",
+    "truncated_fields": [
+      "preserved_clause",
+      "candidate_write"
+    ]
   },
   {
     "item_id": "0a274be469cb",
@@ -21,7 +25,15 @@
     "invalidated_clause": "Invalidated: the truncated/incomplete `save()` `only_this_recurrence` parameter section in the provided text starting from `* save() only_this_recurrence parameter is now a tristate:` through the cutoff at `None is used in the add_objec` (because it is incomplete and therefore not actionable as-is).",
     "new_clause": "New/complete: `save()` `only_this_recurrence` is now a tristate: `True` (default) keeps previous behaviour—if saving a recurrence, it is merged into the master event as an exception to the RRULE; if the master object does not exist, raise `NotFoundError`. `None` (new) behaves like `True` except that",
     "candidate_action": "Update the v3.2.1 `Calendar.delete()` and `save()` changelog text by replacing the existing partial/truncated `save()` tri-state description with a complete, internally consistent statement; preserve the already-validated `Calendar.delete()` `wipe` description and the intention that async tests in `",
-    "candidate_write": "v3.2.1 — Calendar.save() tristate parameter: replace the truncated description with a complete statement of the intended tri-state semantics, while leaving `Calendar.delete(wipe=...)` `wipe` description exactly as validated and keeping/repairing the line ending to include the full async-tests intent (“...”)."
+    "candidate_write": "v3.2.1 — Calendar.save() tristate parameter: replace the truncated description with a complete statement of the intended tri-state semantics, while leaving `Calendar.delete(wipe=...)` `wipe` description exactly as validated and keeping/repairing the line ending to include the full async-tests intent (“...”).",
+    "truncated_fields": [
+      "old_action",
+      "current_action",
+      "preserved_clause",
+      "invalidated_clause",
+      "new_clause",
+      "candidate_action"
+    ]
   },
   {
     "item_id": "0a76ce04a17e",
@@ -33,7 +45,10 @@
     "invalidated_clause": "via our [contact form](https://support.github.com/contact?tags=docs-private-information)",
     "new_clause": "via our [contact form](https://support.github.com/contact/private-information)",
     "candidate_action": "Submit your request to remove private information via our contact form at https://support.github.com/contact/private-information. Include a plain-text version of your request in the body of your message. Sending your request in an attachment may result in processing delays.",
-    "candidate_write": "Draft request template (plain text) for GitHub Private Information Removal:\n\nSubject: Request for removal of private information\n\nBody:\n- URL(s)/Repository(s) where the private information appears:\n- Username(s) / Account(s) involved:\n- Specific private information to remove (exact text/identifiers):\n- Reason for removal (e.g., personal data / sensitive data):\n- Locations within the content (file paths/commit IDs/issue/PR numbers, if known):\n- Requester contact email:\n\nNotes:\n- Please process as"
+    "candidate_write": "Draft request template (plain text) for GitHub Private Information Removal:\n\nSubject: Request for removal of private information\n\nBody:\n- URL(s)/Repository(s) where the private information appears:\n- Username(s) / Account(s) involved:\n- Specific private information to remove (exact text/identifiers):\n- Reason for removal (e.g., personal data / sensitive data):\n- Locations within the content (file paths/commit IDs/issue/PR numbers, if known):\n- Requester contact email:\n\nNotes:\n- Please process as",
+    "truncated_fields": [
+      "candidate_write"
+    ]
   },
   {
     "item_id": "0f062599ce96",
@@ -45,7 +60,8 @@
     "invalidated_clause": "The specific list of extra sections mentioned in V0 (executive summary, Breaking/Potentially Breaking Changes, list of GitHub issues/PRs closed/merged, test framework changes, tests run, work effort, credits, time per release, calendar servers tested).",
     "new_clause": "“...but I frequently add some sections in it.”",
     "candidate_action": "Ensure CHANGELOG.md adheres to Keep a Changelog (v1.1.0), but note that you frequently add extra sections.",
-    "candidate_write": "Keep a Changelog v1.1.0 allows flexibility: retain required structure (Unreleased, versioned sections, headings like Added/Changed/Deprecated/Removed/Fixed/Security) and preserve any existing custom sections, but ensure they are consistently nested under the correct version/Unreleased heading and use the same markdown style. Ensure dates are in the standard form if present, and avoid duplicate version headings."
+    "candidate_write": "Keep a Changelog v1.1.0 allows flexibility: retain required structure (Unreleased, versioned sections, headings like Added/Changed/Deprecated/Removed/Fixed/Security) and preserve any existing custom sections, but ensure they are consistently nested under the correct version/Unreleased heading and use the same markdown style. Ensure dates are in the standard form if present, and avoid duplicate version headings.",
+    "truncated_fields": []
   },
   {
     "item_id": "0f7c0c0c67df",
@@ -57,7 +73,12 @@
     "invalidated_clause": "",
     "new_clause": "",
     "candidate_action": "V0: Allow Qualified Users, at an educational institution (Education Partner), to use and access GitHub products listed on an Order Form solely for non-commercial, academic use; such use is permitted subject to compliance with the Agreement; define “Parties” as GitHub and Education Partner and state:",
-    "candidate_write": "Intro grant (V0) — Allow Qualified Users at an educational institution (Education Partner) to use and access GitHub products listed on an Order Form solely for non-commercial, academic use; such use is permitted only if compliant with the Agreement. Define “Parties” as GitHub and Education Partner. Remainder begins “The Parties agree as follows:”"
+    "candidate_write": "Intro grant (V0) — Allow Qualified Users at an educational institution (Education Partner) to use and access GitHub products listed on an Order Form solely for non-commercial, academic use; such use is permitted only if compliant with the Agreement. Define “Parties” as GitHub and Education Partner. Remainder begins “The Parties agree as follows:”",
+    "truncated_fields": [
+      "old_action",
+      "preserved_clause",
+      "candidate_action"
+    ]
   },
   {
     "item_id": "15abccbbfa57",
@@ -69,7 +90,8 @@
     "invalidated_clause": "The trailing extra closing character/tag: the final `</a>` at the end of V0 (`...to begin!</a>`).",
     "new_clause": "Remove the superfluous `</a>` so the string ends with `...to begin!` (no extra closing tag).",
     "candidate_action": "Use the corrected OAuth authorization link snippet with balanced HTML tags: `<a href=\"https://github.com/login/oauth/authorize?scope=user:email&client_id=<%= client_id %>\">Click here</a> to begin!`",
-    "candidate_write": "`<a href=\"https://github.com/login/oauth/authorize?scope=user:email&client_id=<%= client_id %>\">Click here</a> to begin!`"
+    "candidate_write": "`<a href=\"https://github.com/login/oauth/authorize?scope=user:email&client_id=<%= client_id %>\">Click here</a> to begin!`",
+    "truncated_fields": []
   },
   {
     "item_id": "170477f8e8a2",
@@ -81,7 +103,16 @@
     "invalidated_clause": "Invalidated: the truncated/incomplete `save()` `only_this_recurrence` parameter section in the provided text starting from `* save() only_this_recurrence parameter is now a tristate:` through the cutoff at `None is used in the add_objec` (because it is incomplete and therefore not actionable as-is).",
     "new_clause": "New/complete: `save()` `only_this_recurrence` is now a tristate: `True` (default) keeps previous behaviour—if saving a recurrence, it is merged into the master event as an exception to the RRULE; if the master object does not exist, raise `NotFoundError`. `None` (new) behaves like `True` except that",
     "candidate_action": "Change log entry for v3.2.1 adds async integration tests and describes minor “feature commits” introducing tristate parameters: (1) `Calendar.delete(wipe=None)` semantics (`wipe=True` wipe items without deleting calendar; `wipe=False` always attempt HTTP DELETE; `None` preserves auto-detect “wipe if",
-    "candidate_write": "EDIT PLAN (reusable):\n- In `CHANGELOG.md`, find the v3.2.1 section.\n- Locate the entry mentioning `Calendar.delete()` and the truncated/partial tri-state description for `Calendar.save()`.\n- Do NOT change any text for `Calendar.delete()` (especially the validated `wipe` wording).\n- Do NOT change the sentence about async integration tests in the relevant async module.\n- Replace ONLY the truncated/partial `Calendar.save()` tri-state/wipe-related sentence/fragment with a complete sentence that:\n  -"
+    "candidate_write": "EDIT PLAN (reusable):\n- In `CHANGELOG.md`, find the v3.2.1 section.\n- Locate the entry mentioning `Calendar.delete()` and the truncated/partial tri-state description for `Calendar.save()`.\n- Do NOT change any text for `Calendar.delete()` (especially the validated `wipe` wording).\n- Do NOT change the sentence about async integration tests in the relevant async module.\n- Replace ONLY the truncated/partial `Calendar.save()` tri-state/wipe-related sentence/fragment with a complete sentence that:\n  -",
+    "truncated_fields": [
+      "old_action",
+      "current_action",
+      "preserved_clause",
+      "invalidated_clause",
+      "new_clause",
+      "candidate_action",
+      "candidate_write"
+    ]
   },
   {
     "item_id": "2272615de675",
@@ -93,7 +124,13 @@
     "invalidated_clause": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#d-transparency)",
     "new_clause": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#e-transparency)",
     "candidate_action": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#d-transparency), after redacting personal information, we publish all complete and actionable counter notices at <https://github.com/github/dmca>. Please also note that, although we will only publicly (",
-    "candidate_write": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#e-transparency), after redacting personal information, we publish all complete and actionable counter notices at <https://github.com/github/dmca>. Please also note that, although we will only publicly publish redacted notices, we may provide a complete unredacted copy of any notices we receive directly to any"
+    "candidate_write": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#e-transparency), after redacting personal information, we publish all complete and actionable counter notices at <https://github.com/github/dmca>. Please also note that, although we will only publicly publish redacted notices, we may provide a complete unredacted copy of any notices we receive directly to any",
+    "truncated_fields": [
+      "old_action",
+      "current_action",
+      "preserved_clause",
+      "candidate_action"
+    ]
   },
   {
     "item_id": "239d6931c53f",
@@ -105,7 +142,8 @@
     "invalidated_clause": "You can pass two objects: `required_status_checks` and `restrictions`.",
     "new_clause": "You must pass two objects: `required_status_checks` and `restrictions`. Both can have the value `null` for disabled.",
     "candidate_action": "Inform users that they can pass `required_status_checks` and `restrictions`, and that both may be `null` to disable.",
-    "candidate_write": "Users can optionally pass both `required_status_checks` and `restrictions`. To disable either behavior, set the corresponding field to `null` (and set both to `null` to disable both behaviors)."
+    "candidate_write": "Users can optionally pass both `required_status_checks` and `restrictions`. To disable either behavior, set the corresponding field to `null` (and set both to `null` to disable both behaviors).",
+    "truncated_fields": []
   },
   {
     "item_id": "23de28ed34ce",
@@ -117,7 +155,8 @@
     "invalidated_clause": "The instance-specific signature and binding: `def test_server(self) -> TestServer:` and `server = self.server` (including the prior omission of `@classmethod` and `cls` binding).",
     "new_clause": "Add `@classmethod` decorator; change signature to `def test_server(cls) -> TestServer:`; update server access to `server = cls.server`; expand the docstring with the pytest deprecation rationale about class-scoped fixtures written as plain instance methods and per-test instance freshness.",
     "candidate_action": "Use `@classmethod def test_server(cls) -> TestServer` and access `server = cls.server` instead of `server = self.server`, keeping the docstring rationale about pytest deprecating class-scoped fixtures written as plain instance methods.",
-    "candidate_write": "@classmethod\ndef test_server(cls) -> TestServer:\n    \"\"\"\\\n    Pytest deprecates plain instance methods for class-scoped fixtures.\n    \"\"\"\n    server = cls.server\n    return server"
+    "candidate_write": "@classmethod\ndef test_server(cls) -> TestServer:\n    \"\"\"\\\n    Pytest deprecates plain instance methods for class-scoped fixtures.\n    \"\"\"\n    server = cls.server\n    return server",
+    "truncated_fields": []
   },
   {
     "item_id": "2bab0ef65287",
@@ -129,7 +168,14 @@
     "invalidated_clause": "Stop the loop from *inside* a coroutine scheduled via run_coroutine_threadsafe can stop the loop before it delivers that coroutine's result to the concurrent.futures.Future, so .result() would block until its timeout (~10s) on every single stop(). The previous combined cleanup_and_stop behavior is/\"",
     "new_clause": "if self.xapp_loop: submit cleanup() onto self.xapp_loop using asyncio.run_coroutine_threadsafe(..., self.xapp_loop).result(timeout=10); swallow cleanup exceptions as best-effort; then stop the event loop from outside any coroutine running on it (via call_soon_threadsafe(self.xapp_loop.stop) from the",
     "candidate_action": "Replace cleanup_and_stop() with a new async cleanup() that only performs best-effort cleanup by submitting cleanup() onto self.xapp_loop via run_coroutine_threadsafe(...).result(timeout=10), swallowing any exceptions (e.g., timeout, CancelledError, aiohttp errors), and then only stops the loop when/",
-    "candidate_write": "In `caldav/testing.py`, implement/replace `async def cleanup(self):` to:\n- If `self.xapp_loop` is set, schedule cleanup on that loop via `future = asyncio.run_coroutine_threadsafe(self.cleanup(), self.xapp_loop)` (or better: call a private `_cleanup_impl()` to avoid recursion).\n- Await `future.result(timeout=10)` inside try/except swallowing `asyncio.TimeoutError`/`TimeoutError`, `asyncio.CancelledError`, `aiohttp.ClientError`, and broad `Exception`.\n- After best-effort cleanup, stop the loop: `"
+    "candidate_write": "In `caldav/testing.py`, implement/replace `async def cleanup(self):` to:\n- If `self.xapp_loop` is set, schedule cleanup on that loop via `future = asyncio.run_coroutine_threadsafe(self.cleanup(), self.xapp_loop)` (or better: call a private `_cleanup_impl()` to avoid recursion).\n- Await `future.result(timeout=10)` inside try/except swallowing `asyncio.TimeoutError`/`TimeoutError`, `asyncio.CancelledError`, `aiohttp.ClientError`, and broad `Exception`.\n- After best-effort cleanup, stop the loop: `",
+    "truncated_fields": [
+      "current_action",
+      "invalidated_clause",
+      "new_clause",
+      "candidate_action",
+      "candidate_write"
+    ]
   },
   {
     "item_id": "2c440fd83ecb",
@@ -141,7 +187,14 @@
     "invalidated_clause": "Stop the loop from *inside* a coroutine scheduled via run_coroutine_threadsafe can stop the loop before it delivers that coroutine's result to the concurrent.futures.Future, so .result() would block until its timeout (~10s) on every single stop(). The previous combined cleanup_and_stop behavior is/\"",
     "new_clause": "if self.xapp_loop: submit cleanup() onto self.xapp_loop using asyncio.run_coroutine_threadsafe(..., self.xapp_loop).result(timeout=10); swallow cleanup exceptions as best-effort; then stop the event loop from outside any coroutine running on it (via call_soon_threadsafe(self.xapp_loop.stop) from the",
     "candidate_action": "Replace cleanup_and_stop() with a new async cleanup() that only performs best-effort cleanup by submitting cleanup() onto self.xapp_loop via run_coroutine_threadsafe(...).result(timeout=10), swallowing any exceptions (e.g., timeout, CancelledError, aiohttp errors), and then only stops the loop when/",
-    "candidate_write": "In `caldav/testing.py`, add:\n\n```py\nasync def cleanup(self):\n    loop = getattr(self, \"xapp_loop\", None)\n    if not loop:\n        return\n\n    try:\n        try:\n            fut = asyncio.run_coroutine_threadsafe(\n                self.cleanup_on_xapp_loop(), loop\n            )\n            try:\n                fut.result(timeout=10)\n            except (TimeoutError, asyncio.TimeoutError, asyncio.CancelledError):\n                pass\n        except Exception:\n            # best-effort: swallow broad"
+    "candidate_write": "In `caldav/testing.py`, add:\n\n```py\nasync def cleanup(self):\n    loop = getattr(self, \"xapp_loop\", None)\n    if not loop:\n        return\n\n    try:\n        try:\n            fut = asyncio.run_coroutine_threadsafe(\n                self.cleanup_on_xapp_loop(), loop\n            )\n            try:\n                fut.result(timeout=10)\n            except (TimeoutError, asyncio.TimeoutError, asyncio.CancelledError):\n                pass\n        except Exception:\n            # best-effort: swallow broad",
+    "truncated_fields": [
+      "current_action",
+      "invalidated_clause",
+      "new_clause",
+      "candidate_action",
+      "candidate_write"
+    ]
   },
   {
     "item_id": "2d090b8415b2",
@@ -153,7 +206,8 @@
     "invalidated_clause": "",
     "new_clause": "You cannot submit a pull request to one repository that requests a merge to a base of another repository.",
     "candidate_action": "`base` field definition (V0): describes requiredness, that it must be an existing branch in the current repository, and forbids submitting a pull request to one repository that requests a merge to a base of another repository.",
-    "candidate_write": "Artifact: `base` field definition (V0) — required; must reference an existing branch in the current repository; forbids submitting a pull request that targets a base belonging to a different repository (prevents cross-repo merge-to-base)."
+    "candidate_write": "Artifact: `base` field definition (V0) — required; must reference an existing branch in the current repository; forbids submitting a pull request that targets a base belonging to a different repository (prevents cross-repo merge-to-base).",
+    "truncated_fields": []
   },
   {
     "item_id": "342a1da4bfa9",
@@ -165,7 +219,12 @@
     "invalidated_clause": "`except FileNotFoundError:` (catch only the missing-file case).",
     "new_clause": "`except OSError as e:` ... log `config file {fn} not usable: {e}` and continue treating it as “no config here”.",
     "candidate_action": "Broaden the optional config probe exception handling to catch `OSError as e` instead of only `FileNotFoundError`, and treat any `OSError` (missing file, directory path, permission issues, etc.) as “no usable config here”; log a debug message including the exception details. This prevents `IsADir`/`O",
-    "candidate_write": "In `caldav/config.py`, update the optional config probe to catch broader OS-level failures:\n- Find the `try:` block that probes an optional config file and currently has `except FileNotFoundError:`.\n- Replace it with `except OSError as e:`.\n- In the exception handler, log a debug message including the exception (e.g., `logger.debug(\"Optional config probe failed; treating as no usable config: %s\", e)`).\n- Keep the existing behavior of falling back to defaults / skipping loading after the log.\n\nR:"
+    "candidate_write": "In `caldav/config.py`, update the optional config probe to catch broader OS-level failures:\n- Find the `try:` block that probes an optional config file and currently has `except FileNotFoundError:`.\n- Replace it with `except OSError as e:`.\n- In the exception handler, log a debug message including the exception (e.g., `logger.debug(\"Optional config probe failed; treating as no usable config: %s\", e)`).\n- Keep the existing behavior of falling back to defaults / skipping loading after the log.\n\nR:",
+    "truncated_fields": [
+      "current_action",
+      "candidate_action",
+      "candidate_write"
+    ]
   },
   {
     "item_id": "3537df55a37a",
@@ -177,7 +236,11 @@
     "invalidated_clause": "Some more bugs were found while adding those tests.",
     "new_clause": "Some few more bugs were found while adding those tests.",
     "candidate_action": "V1: Update the changelog entry to correct the wording from \"predominently\" to \"predominently\" (same spelling retained in provided text), and change \"Some more bugs were found\" to \"Some few more bugs were found\" while otherwise preserving the same meaning (async integration tests replicating `test_c]",
-    "candidate_write": "Change the 3.2.1 changelog wording: keep “predominently” as-is, and replace “Some more bugs were found” with “Some few more bugs were found” (preserving the rest of the sentence)."
+    "candidate_write": "Change the 3.2.1 changelog wording: keep “predominently” as-is, and replace “Some more bugs were found” with “Some few more bugs were found” (preserving the rest of the sentence).",
+    "truncated_fields": [
+      "current_action",
+      "candidate_action"
+    ]
   },
   {
     "item_id": "3a45c59d5c04",
@@ -189,7 +252,10 @@
     "invalidated_clause": "The original intended continuation of the README after “Though” from V0 is invalidated by the inserted “close-source/open-source removal” message (the remainder is no longer the same text).",
     "new_clause": "Insert the message: the developer.github.com website is no longer open-source; move the repo to a GitHub-archive organization; thank contributors; cite reasons for closing (updated documentation/workflow changed; open-source documentation/maintenance constraints; focus on what’s important without “g",
     "candidate_action": "abstain",
-    "candidate_write": "Please provide (1) the base64-encoded V1 block (decoded text), and (2) the current README.md snippet starting at the word “Though” through the end of the README section that should be replaced. With that, I can apply ACTION A safely while preserving all surrounding content exactly."
+    "candidate_write": "Please provide (1) the base64-encoded V1 block (decoded text), and (2) the current README.md snippet starting at the word “Though” through the end of the README section that should be replaced. With that, I can apply ACTION A safely while preserving all surrounding content exactly.",
+    "truncated_fields": [
+      "new_clause"
+    ]
   },
   {
     "item_id": "3a6762750ff5",
@@ -201,7 +267,12 @@
     "invalidated_clause": "The previous long “close-source the site” explanation (including the earlier statements about already having close-sourced materials located elsewhere, keeping the repository open-source, and the detailed discussion of documenting/reviews and maintaining open-source commitments).",
     "new_clause": "# developer.github.com **NOTE: The developer.github.com website is no longer open-source.** We have moved this repository into [our github-archive organization](https://github.com/github-archive) to signify that we are no longer accepting open-source contributions to this repository. We want to note",
     "candidate_action": "Update the README to a new notice stating that developer.github.com is no longer open-source, that the repository has been moved to the github-archive organization, and that the rationale is (1) documentation for unreleased features is already close-sourced, and (2) maintaining open-source became a)",
-    "candidate_write": "README.md update (Notice):\n\n## Notice\n\ndeveloper.github.com is no longer open-source.\n\nThe repository has been moved to the **github-archive** organization.\n\n**Rationale:**\n1. Documentation for unreleased features is already close-sourced.\n2. Maintaining open-source became a non-priority due to ongoing changes in how documentation and development are handled."
+    "candidate_write": "README.md update (Notice):\n\n## Notice\n\ndeveloper.github.com is no longer open-source.\n\nThe repository has been moved to the **github-archive** organization.\n\n**Rationale:**\n1. Documentation for unreleased features is already close-sourced.\n2. Maintaining open-source became a non-priority due to ongoing changes in how documentation and development are handled.",
+    "truncated_fields": [
+      "current_action",
+      "new_clause",
+      "candidate_action"
+    ]
   },
   {
     "item_id": "3b1b5c6a4cf4",
@@ -213,7 +284,10 @@
     "invalidated_clause": "Some more bugs were found while adding those tests.",
     "new_clause": "Some few more bugs were found while adding those tests.",
     "candidate_action": "verify",
-    "candidate_write": "Next consumer artifact (verify CHANGELOG.md 3.2.1):\n- Must contain original spelling: “predominently” (not corrected/altered).\n- Must read: “Some few more bugs were found” (not “Some more bugs were found”).\n- Meaning unchanged: async integration tests replicate logic from `test_caldav.py` / sync integration tests."
+    "candidate_write": "Next consumer artifact (verify CHANGELOG.md 3.2.1):\n- Must contain original spelling: “predominently” (not corrected/altered).\n- Must read: “Some few more bugs were found” (not “Some more bugs were found”).\n- Meaning unchanged: async integration tests replicate logic from `test_caldav.py` / sync integration tests.",
+    "truncated_fields": [
+      "current_action"
+    ]
   },
   {
     "item_id": "3f313f62d906",
@@ -225,7 +299,10 @@
     "invalidated_clause": "The specific list of extra sections mentioned in V0 (executive summary, Breaking/Potentially Breaking Changes, list of GitHub issues/PRs closed/merged, test framework changes, tests run, work effort, credits, time per release, calendar servers tested).",
     "new_clause": "“...but I frequently add some sections in it.”",
     "candidate_action": "Ensure CHANGELOG.md adheres to Keep a Changelog (v1.1.0), but note that you frequently add extra sections.",
-    "candidate_write": "Keep a CHANGELOG.md compliance checklist for Keep a Changelog v1.1.0 (extra sections allowed):\n- Top-level heading: “# Changelog” (create if missing).\n- Next required heading: “## [Unreleased]”.\n- Version blocks: “## [x.y.z] - YYYY-MM-DD” in descending order (most recent first). Use bracketed version links only if the file already uses that style.\n- Within each version block, canonical subsection headings (may be omitted if empty, but when present must match exactly):\n  - “### Added”, “### Added"
+    "candidate_write": "Keep a CHANGELOG.md compliance checklist for Keep a Changelog v1.1.0 (extra sections allowed):\n- Top-level heading: “# Changelog” (create if missing).\n- Next required heading: “## [Unreleased]”.\n- Version blocks: “## [x.y.z] - YYYY-MM-DD” in descending order (most recent first). Use bracketed version links only if the file already uses that style.\n- Within each version block, canonical subsection headings (may be omitted if empty, but when present must match exactly):\n  - “### Added”, “### Added",
+    "truncated_fields": [
+      "candidate_write"
+    ]
   },
   {
     "item_id": "4024db2e884f",
@@ -237,7 +314,10 @@
     "invalidated_clause": "The governing payment section reference: [Section K. Payment](/site-policy/github-terms/github-terms-of-service#k-payment).",
     "new_clause": "The governing payment section reference: [Section L. Payment](/site-policy/github-terms/github-terms-of-service#l-payment).",
     "candidate_action": "Update the reference to the governing payment section for Developer Product purchases: from [Section K. Payment](/site-policy/github-terms/github-terms-of-service#k-payment) to [Section L. Payment](/site-policy/github-terms/github-terms-of-service#l-payment).",
-    "candidate_write": "Replace all instances of:\n[Section K. Payment](/site-policy/github-terms/github-terms-of-service#k-payment)\nwith:\n[Section L. Payment](/site-policy/github-terms/github-terms-of-service#l-payment)"
+    "candidate_write": "Replace all instances of:\n[Section K. Payment](/site-policy/github-terms/github-terms-of-service#k-payment)\nwith:\n[Section L. Payment](/site-policy/github-terms/github-terms-of-service#l-payment)",
+    "truncated_fields": [
+      "preserved_clause"
+    ]
   },
   {
     "item_id": "442763eb1730",
@@ -249,7 +329,8 @@
     "invalidated_clause": "[DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#d-transparency)",
     "new_clause": "[DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#e-transparency)",
     "candidate_action": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#e-transparency), after redacting personal information, we publish all complete and actionable takedown notices at <https://github.com/github/dmca>.",
-    "candidate_write": "Next consumer artifact: Use the DMCA Takedown Policy **e-transparency** section to justify that, after redacting personal information, GitHub publishes all complete and actionable takedown notices at https://github.com/github/dmca."
+    "candidate_write": "Next consumer artifact: Use the DMCA Takedown Policy **e-transparency** section to justify that, after redacting personal information, GitHub publishes all complete and actionable takedown notices at https://github.com/github/dmca.",
+    "truncated_fields": []
   },
   {
     "item_id": "49d8d3b837b0",
@@ -261,7 +342,13 @@
     "invalidated_clause": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#d-transparency)",
     "new_clause": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#e-transparency)",
     "candidate_action": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#e-transparency), after redacting personal information, we publish all complete and actionable counter notices at <https://github.com/github/dmca>. Please also note that, although we will only publicly (",
-    "candidate_write": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#e-transparency), after redacting personal information, we publish all complete and actionable counter notices at <https://github.com/github/dmca>. Please also note that, although we will only publicly publish redacted notices, we may provide a complete unredacted copy of any notices we receive directly to any interested party."
+    "candidate_write": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#e-transparency), after redacting personal information, we publish all complete and actionable counter notices at <https://github.com/github/dmca>. Please also note that, although we will only publicly publish redacted notices, we may provide a complete unredacted copy of any notices we receive directly to any interested party.",
+    "truncated_fields": [
+      "old_action",
+      "current_action",
+      "preserved_clause",
+      "candidate_action"
+    ]
   },
   {
     "item_id": "4fcc8e449bb1",
@@ -273,7 +360,8 @@
     "invalidated_clause": "",
     "new_clause": "You cannot submit a pull request to one repository that requests a merge to a base of another repository.",
     "candidate_action": "`base` field definition (V0): describes requiredness, that it must be an existing branch in the current repository, and forbids submitting a pull request to one repository that requests a merge to a base of another repository.",
-    "candidate_write": "Reusable artifact: `base` field definition (V0)\n- Must be required.\n- Value must correspond to an existing branch in the current repository.\n- Cannot submit a pull request to one repository while requesting a merge to a base branch from another repository (no cross-repo merge-base)."
+    "candidate_write": "Reusable artifact: `base` field definition (V0)\n- Must be required.\n- Value must correspond to an existing branch in the current repository.\n- Cannot submit a pull request to one repository while requesting a merge to a base branch from another repository (no cross-repo merge-base).",
+    "truncated_fields": []
   },
   {
     "item_id": "511b69428da8",
@@ -285,7 +373,8 @@
     "invalidated_clause": "You can pass two objects: `required_status_checks` and `restrictions`.",
     "new_clause": "You must pass two objects: `required_status_checks` and `restrictions`. Both can have the value `null` for disabled.",
     "candidate_action": "Specify that users must pass `required_status_checks` and `restrictions`, and that both may be `null` to disable.",
-    "candidate_write": "In the required-parameters documentation for branches protection, specify that users must include both `required_status_checks` and `restrictions` in the request, and that setting either (or both) to `null` disables that respective feature."
+    "candidate_write": "In the required-parameters documentation for branches protection, specify that users must include both `required_status_checks` and `restrictions` in the request, and that setting either (or both) to `null` disables that respective feature.",
+    "truncated_fields": []
   },
   {
     "item_id": "56b1f356c1fa",
@@ -297,7 +386,11 @@
     "invalidated_clause": "Some more bugs were found while adding those tests.",
     "new_clause": "Some few more bugs were found while adding those tests.",
     "candidate_action": "V1: Update the changelog entry to correct the wording from \"predominently\" to \"predominently\" (same spelling retained in provided text), and change \"Some more bugs were found\" to \"Some few more bugs were found\" while otherwise preserving the same meaning (async integration tests replicating `test_c]",
-    "candidate_write": "### 3.2.1\n- The changeset in 3.2.1 is predominently added async integration tests. Those tests should now be replicating all the logic in the good old sync integration tests under `test_caldav.py`. Some few more bugs were found while adding those tests."
+    "candidate_write": "### 3.2.1\n- The changeset in 3.2.1 is predominently added async integration tests. Those tests should now be replicating all the logic in the good old sync integration tests under `test_caldav.py`. Some few more bugs were found while adding those tests.",
+    "truncated_fields": [
+      "current_action",
+      "candidate_action"
+    ]
   },
   {
     "item_id": "59ddc4835744",
@@ -309,7 +402,10 @@
     "invalidated_clause": "The governing payment section reference: [Section K. Payment](/site-policy/github-terms/github-terms-of-service#k-payment).",
     "new_clause": "The governing payment section reference: [Section L. Payment](/site-policy/github-terms/github-terms-of-service#l-payment).",
     "candidate_action": "Update the reference to the governing payment section for Developer Product purchases: from [Section K. Payment](/site-policy/github-terms/github-terms-of-service#k-payment) to [Section L. Payment](/site-policy/github-terms/github-terms-of-service#l-payment).",
-    "candidate_write": "In the Developer Product terms governing payment reference, replace:\nFrom: [Section K. Payment](/site-policy/github-terms/github-terms-of-service#k-payment)\nTo: [Section L. Payment](/site-policy/github-terms/github-terms-of-service#l-payment)\nLeave the rest of the paragraph unchanged."
+    "candidate_write": "In the Developer Product terms governing payment reference, replace:\nFrom: [Section K. Payment](/site-policy/github-terms/github-terms-of-service#k-payment)\nTo: [Section L. Payment](/site-policy/github-terms/github-terms-of-service#l-payment)\nLeave the rest of the paragraph unchanged.",
+    "truncated_fields": [
+      "preserved_clause"
+    ]
   },
   {
     "item_id": "5b7877f2cd16",
@@ -321,7 +417,12 @@
     "invalidated_clause": "V0 default credential values and domain-qualified usernames are no longer valid for the intended test image behavior: `${CYRUS_USERNAME:-testuser@test.local}`, `${CYRUS_PASSWORD:-testpassword}`, and domain-qualified `username: user1@test.local`, `username: user2@test.local`, `username: user3@testual",
     "new_clause": "Use plain usernames (virtdomains off): `V1: username: ${CYRUS_USERNAME:-user1} password: ${CYRUS_PASSWORD:-x}` and set usernames as `username: user1`, `username: user2`, `username: user3`.",
     "candidate_action": "tests/caldav_test_servers.yaml.example: V0 and V1 both define CalDAV test server credentials via inline YAML. V0 uses `${CYRUS_USERNAME:-testuser@test.local}` and `${CYRUS_PASSWORD:-testpassword}` plus three default usernames with domains; V1 changes those defaults to `${CYRUS_USERNAME:-user1}` and,",
-    "candidate_write": "Next-step artifact:\n- In tests/caldav_test_servers.yaml.example, ensure V1 uses default credentials `${CYRUS_USERNAME:-user1}` and `${CYRUS_PASSWORD:-x}`.\n- Ensure default CalDAV usernames list is exactly: user1, user2, user3 (no domains), since virtdomains is off.\n- Verify V0 vs V1: V0 may continue using the existing testuser@test.local defaults; only V1 must be updated per the requirement."
+    "candidate_write": "Next-step artifact:\n- In tests/caldav_test_servers.yaml.example, ensure V1 uses default credentials `${CYRUS_USERNAME:-user1}` and `${CYRUS_PASSWORD:-x}`.\n- Ensure default CalDAV usernames list is exactly: user1, user2, user3 (no domains), since virtdomains is off.\n- Verify V0 vs V1: V0 may continue using the existing testuser@test.local defaults; only V1 must be updated per the requirement.",
+    "truncated_fields": [
+      "old_action",
+      "invalidated_clause",
+      "candidate_action"
+    ]
   },
   {
     "item_id": "63b0b46fa928",
@@ -333,7 +434,13 @@
     "invalidated_clause": "\"raise NotImplementedError(\\\"handle_rrule=True is not yet supported for async clients\\\")\"",
     "new_clause": "Dispatch recurring completion in async mode to `_async_complete_recurring_{rrule_mode}` implementations. For `_async_complete_recurring_safe(completion_timestamp)`: if `not self._reduce_count()` then `await self._async_complete(completion_timestamp, handle_rrule=False)`; compute `next_dtstart = self",
     "candidate_action": "Replace the async behavior with an implemented async completion flow: add an `await getattr(self, \"_async_complete_recurring_%s\" % rrule_mode)(completion_timestamp)` dispatch and provide `_async_complete_recurring_safe()` and `_async_complete_recurring_thisandfuture()` async implementations that: (1",
-    "candidate_write": "Artifact: caldav/calendarobjectresource.py recurring completion async support\n\n- In the existing async recurring completion flow (where rrule_mode is selected), replace sync-only calls with:\n  `await getattr(self, \"_async_complete_recurring_%s\" % rrule_mode)(completion_timestamp)`\n\n- Add/implement async methods mirroring the current sync logic:\n  - `async def _async_complete_recurring_safe(self, completion_timestamp)`\n  - `async def _async_complete_recurring_thisandfuture(self, completion_title:"
+    "candidate_write": "Artifact: caldav/calendarobjectresource.py recurring completion async support\n\n- In the existing async recurring completion flow (where rrule_mode is selected), replace sync-only calls with:\n  `await getattr(self, \"_async_complete_recurring_%s\" % rrule_mode)(completion_timestamp)`\n\n- Add/implement async methods mirroring the current sync logic:\n  - `async def _async_complete_recurring_safe(self, completion_timestamp)`\n  - `async def _async_complete_recurring_thisandfuture(self, completion_title:",
+    "truncated_fields": [
+      "current_action",
+      "new_clause",
+      "candidate_action",
+      "candidate_write"
+    ]
   },
   {
     "item_id": "6498ed1b52ca",
@@ -345,7 +452,8 @@
     "invalidated_clause": "",
     "new_clause": "{% if page.version == 'dotcom' or page.version >= 2.8 %} `base`|`string` | The name of the branch you want your changes pulled into. This should be an existing branch on the current repository. You cannot update the base branch on a pull request to point to another repository. {% endif %}",
     "candidate_action": "Keep `state` documentation as-is, and add the `base` field documentation only for the specified page versions (V1).",
-    "candidate_write": "Artifact: For the pulls documentation file, do not modify the `state` field section. Add `base` field documentation only for the specified V1 page versions; do not add `base` for V0 (per instructions)."
+    "candidate_write": "Artifact: For the pulls documentation file, do not modify the `state` field section. Add `base` field documentation only for the specified V1 page versions; do not add `base` for V0 (per instructions).",
+    "truncated_fields": []
   },
   {
     "item_id": "65469024a170",
@@ -357,7 +465,12 @@
     "invalidated_clause": "\"raise NotImplementedError(\\\"handle_rrule=True is not yet supported for async clients\\\")\"",
     "new_clause": "Dispatch recurring completion in async mode to `_async_complete_recurring_{rrule_mode}` implementations. For `_async_complete_recurring_safe(completion_timestamp)`: if `not self._reduce_count()` then `await self._async_complete(completion_timestamp, handle_rrule=False)`; compute `next_dtstart = self",
     "candidate_action": "Replace the async behavior with an implemented async completion flow: add an `await getattr(self, \"_async_complete_recurring_%s\" % rrule_mode)(completion_timestamp)` dispatch and provide `_async_complete_recurring_safe()` and `_async_complete_recurring_thisandfuture()` async implementations that: (1",
-    "candidate_write": ""
+    "candidate_write": "",
+    "truncated_fields": [
+      "current_action",
+      "new_clause",
+      "candidate_action"
+    ]
   },
   {
     "item_id": "67650f541148",
@@ -369,7 +482,8 @@
     "invalidated_clause": "\"and your agreement with Microsoft does not already provide for the inclusion of these terms\"",
     "new_clause": "Remove the condition that your Microsoft agreement does not already provide for the inclusion of these terms; amendment status applies whenever you license GitHub through Microsoft.",
     "candidate_action": "If you license GitHub through Microsoft, these terms shall be considered an amendment to the Microsoft Product Terms for GitHub Offerings for the duration of your use of the pre-release software.",
-    "candidate_write": "ACTION B: If you license GitHub through Microsoft, these terms shall be considered an amendment to the Microsoft Product Terms for GitHub Offerings for the duration of your use of the pre-release software."
+    "candidate_write": "ACTION B: If you license GitHub through Microsoft, these terms shall be considered an amendment to the Microsoft Product Terms for GitHub Offerings for the duration of your use of the pre-release software.",
+    "truncated_fields": []
   },
   {
     "item_id": "6c85e51318a1",
@@ -381,7 +495,10 @@
     "invalidated_clause": "GitHub will not use your inputs or the outputs generated to train AI language models, unless you have instructed us in writing to do so. (as an all-encompassing statement prior to narrowing)",
     "new_clause": "GitHub will not use Copilot Business or Copilot Enterprise Inputs or the Outputs generated to train AI language models, unless you have instructed us in writing to do so. c. **Processing of Personal Data.** GitHub is the data controller in relation to the Personal Data processed in connection with (",
     "candidate_action": "Do not use Copilot Business/Enterprise inputs or generated outputs to train AI language models unless the user instructed otherwise; additionally specify processing of Personal Data by stating GitHub is the data controller for Personal Data processed in connection with the pre-release software.",
-    "candidate_write": "Reuse artifact (policy clause):\n- Copilot Business/Enterprise inputs and generated outputs will not be used to train AI language models unless you instruct us to do so.\n- GitHub is the data controller for Personal Data processed in connection with the pre-release software.\n- For avoidance of doubt: GitHub will not use Copilot Business/Enterprise inputs or generated outputs to train AI language models unless you instruct otherwise."
+    "candidate_write": "Reuse artifact (policy clause):\n- Copilot Business/Enterprise inputs and generated outputs will not be used to train AI language models unless you instruct us to do so.\n- GitHub is the data controller for Personal Data processed in connection with the pre-release software.\n- For avoidance of doubt: GitHub will not use Copilot Business/Enterprise inputs or generated outputs to train AI language models unless you instruct otherwise.",
+    "truncated_fields": [
+      "new_clause"
+    ]
   },
   {
     "item_id": "72b99c74444b",
@@ -393,7 +510,10 @@
     "invalidated_clause": "GitHub will not use your inputs or the outputs generated to train AI language models, unless you have instructed us in writing to do so. (as an all-encompassing statement prior to narrowing)",
     "new_clause": "GitHub will not use Copilot Business or Copilot Enterprise Inputs or the Outputs generated to train AI language models, unless you have instructed us in writing to do so. c. **Processing of Personal Data.** GitHub is the data controller in relation to the Personal Data processed in connection with (",
     "candidate_action": "Use inputs/outputs to train AI language models unless the user instructed otherwise (single general prohibition statement).",
-    "candidate_write": "Reusable amendment text to apply:\n1) “Copilot Business/Enterprise inputs and generated outputs will not be used to train AI language models unless the user instructed otherwise.”\n2) “GitHub is the data controller for Personal Data processed in connection with the pre-release software.”"
+    "candidate_write": "Reusable amendment text to apply:\n1) “Copilot Business/Enterprise inputs and generated outputs will not be used to train AI language models unless the user instructed otherwise.”\n2) “GitHub is the data controller for Personal Data processed in connection with the pre-release software.”",
+    "truncated_fields": [
+      "new_clause"
+    ]
   },
   {
     "item_id": "7359bbc4c8d5",
@@ -405,7 +525,8 @@
     "invalidated_clause": "",
     "new_clause": "{% if page.version == 'dotcom' or page.version >= 2.8 %} `base`|`string` | The name of the branch you want your changes pulled into. This should be an existing branch on the current repository. You cannot update the base branch on a pull request to point to another repository. {% endif %}",
     "candidate_action": "Keep `state` documentation as-is, and add the `base` field documentation only for the specified page versions (V1).",
-    "candidate_write": "Update `content/v3/pulls.md` to preserve the existing `state` field row exactly: `state|string| State of this Pull Request. Either open or closed.`. Then add a new/updated `base` field documentation section limited to V1 only; ensure V0 documentation remains unchanged/no `base` changes for V0."
+    "candidate_write": "Update `content/v3/pulls.md` to preserve the existing `state` field row exactly: `state|string| State of this Pull Request. Either open or closed.`. Then add a new/updated `base` field documentation section limited to V1 only; ensure V0 documentation remains unchanged/no `base` changes for V0.",
+    "truncated_fields": []
   },
   {
     "item_id": "783327eaa9e1",
@@ -417,7 +538,8 @@
     "invalidated_clause": "(none)",
     "new_clause": "This list includes personal user accounts and organization accounts.",
     "candidate_action": "Lists all users, in the order that they signed up on {{ site.data.variables.product.product_name }}. This list includes personal user accounts and organization accounts.",
-    "candidate_write": "Use the users listing query/source that returns BOTH personal user accounts and organization accounts, sorted by signup timestamp ascending (oldest → newest) on {{ site.data.variables.product.product_name }}."
+    "candidate_write": "Use the users listing query/source that returns BOTH personal user accounts and organization accounts, sorted by signup timestamp ascending (oldest → newest) on {{ site.data.variables.product.product_name }}.",
+    "truncated_fields": []
   },
   {
     "item_id": "7d0e3be13fc4",
@@ -429,7 +551,10 @@
     "invalidated_clause": "GitHub will not use your inputs or the outputs generated to train AI language models, unless you have instructed us in writing to do so. (as an all-encompassing statement prior to narrowing)",
     "new_clause": "GitHub will not use Copilot Business or Copilot Enterprise Inputs or the Outputs generated to train AI language models, unless you have instructed us in writing to do so. c. **Processing of Personal Data.** GitHub is the data controller in relation to the Personal Data processed in connection with (",
     "candidate_action": "verify",
-    "candidate_write": "GitHub will not use your inputs or the outputs generated to train AI language models, unless you have instructed us in writing to do so."
+    "candidate_write": "GitHub will not use your inputs or the outputs generated to train AI language models, unless you have instructed us in writing to do so.",
+    "truncated_fields": [
+      "new_clause"
+    ]
   },
   {
     "item_id": "841d2f7cc86f",
@@ -441,7 +566,14 @@
     "invalidated_clause": "Stop the loop from *inside* a coroutine scheduled via run_coroutine_threadsafe can stop the loop before it delivers that coroutine's result to the concurrent.futures.Future, so .result() would block until its timeout (~10s) on every single stop(). The previous combined cleanup_and_stop behavior is/\"",
     "new_clause": "if self.xapp_loop: submit cleanup() onto self.xapp_loop using asyncio.run_coroutine_threadsafe(..., self.xapp_loop).result(timeout=10); swallow cleanup exceptions as best-effort; then stop the event loop from outside any coroutine running on it (via call_soon_threadsafe(self.xapp_loop.stop) from the",
     "candidate_action": "Replace cleanup_and_stop() with a new async cleanup() that only performs best-effort cleanup by submitting cleanup() onto self.xapp_loop via run_coroutine_threadsafe(...).result(timeout=10), swallowing any exceptions (e.g., timeout, CancelledError, aiohttp errors), and then only stops the loop when/",
-    "candidate_write": "In caldav/testing.py: replace cleanup_and_stop() with new async cleanup() that does best-effort cleanup by scheduling self.xapp.cleanup() onto self.xapp_loop using asyncio.run_coroutine_threadsafe(..., self.xapp_loop).result(timeout=10); swallow any exceptions (timeout, CancelledError, aiohttp errors, etc.). After cleanup result completes, if self.xapp_loop is set, stop it via self.xapp_loop.call_soon_threadsafe(self.xapp_loop.stop) (stop must be triggered from outside any coroutine currently on"
+    "candidate_write": "In caldav/testing.py: replace cleanup_and_stop() with new async cleanup() that does best-effort cleanup by scheduling self.xapp.cleanup() onto self.xapp_loop using asyncio.run_coroutine_threadsafe(..., self.xapp_loop).result(timeout=10); swallow any exceptions (timeout, CancelledError, aiohttp errors, etc.). After cleanup result completes, if self.xapp_loop is set, stop it via self.xapp_loop.call_soon_threadsafe(self.xapp_loop.stop) (stop must be triggered from outside any coroutine currently on",
+    "truncated_fields": [
+      "current_action",
+      "invalidated_clause",
+      "new_clause",
+      "candidate_action",
+      "candidate_write"
+    ]
   },
   {
     "item_id": "858d3f779f43",
@@ -453,7 +585,8 @@
     "invalidated_clause": "via our [contact form](https://support.github.com/contact?tags=docs-private-information)",
     "new_clause": "via our [contact form](https://support.github.com/contact/private-information)",
     "candidate_action": "Submit your request to remove private information via our contact form at https://support.github.com/contact/private-information. Include a plain-text version of your request in the body of your message. Sending your request in an attachment may result in processing delays.",
-    "candidate_write": "Subject: Private information removal request\n\nI am requesting removal of the following private information from GitHub:\n- Location(s) (URL(s) or identifiers): [paste links/refs]\n- Type of private information: [e.g., email, phone, address, credentials]\n- Personal/organization affected: [name/org]\n- Why it is private: [brief reason]\n- Confirmation I am authorized to request removal (if applicable): [yes/no + brief details]\n\nAdditional details:\n- Any"
+    "candidate_write": "Subject: Private information removal request\n\nI am requesting removal of the following private information from GitHub:\n- Location(s) (URL(s) or identifiers): [paste links/refs]\n- Type of private information: [e.g., email, phone, address, credentials]\n- Personal/organization affected: [name/org]\n- Why it is private: [brief reason]\n- Confirmation I am authorized to request removal (if applicable): [yes/no + brief details]\n\nAdditional details:\n- Any",
+    "truncated_fields": []
   },
   {
     "item_id": "889bba81b8f4",
@@ -465,7 +598,11 @@
     "invalidated_clause": "`except FileNotFoundError:` (catch only the missing-file case).",
     "new_clause": "`except OSError as e:` ... log `config file {fn} not usable: {e}` and continue treating it as “no config here”.",
     "candidate_action": "Broaden the optional config probe exception handling to catch `OSError as e` instead of only `FileNotFoundError`, and treat any `OSError` (missing file, directory path, permission issues, etc.) as “no usable config here”; log a debug message including the exception details. This prevents `IsADir`/`O",
-    "candidate_write": "Artifact: In `caldav/config.py`, update the optional config probe to handle OS-level issues.\n\n- Change `except FileNotFoundError:` to `except OSError as e:`.\n- In the exception block, add debug logging that includes the exception detail, e.g.:\n  - `logger.debug(\"Config probe failed (%s)\", e)`\n- Ensure control flow continues/returns as if no usable config exists (i.e., same behavior as when the file is missing)."
+    "candidate_write": "Artifact: In `caldav/config.py`, update the optional config probe to handle OS-level issues.\n\n- Change `except FileNotFoundError:` to `except OSError as e:`.\n- In the exception block, add debug logging that includes the exception detail, e.g.:\n  - `logger.debug(\"Config probe failed (%s)\", e)`\n- Ensure control flow continues/returns as if no usable config exists (i.e., same behavior as when the file is missing).",
+    "truncated_fields": [
+      "current_action",
+      "candidate_action"
+    ]
   },
   {
     "item_id": "88caa70cb208",
@@ -477,7 +614,11 @@
     "invalidated_clause": "V0 default credential values and domain-qualified usernames are no longer valid for the intended test image behavior: `${CYRUS_USERNAME:-testuser@test.local}`, `${CYRUS_PASSWORD:-testpassword}`, and domain-qualified `username: user1@test.local`, `username: user2@test.local`, `username: user3@testual",
     "new_clause": "Use plain usernames (virtdomains off): `V1: username: ${CYRUS_USERNAME:-user1} password: ${CYRUS_PASSWORD:-x}` and set usernames as `username: user1`, `username: user2`, `username: user3`.",
     "candidate_action": "Update tests/caldav_test_servers.yaml.example server credential defaults and username list: V1 should use `${CYRUS_USERNAME:-user1}` (plain usernames, no domains) and `${CYRUS_PASSWORD:-x}`, with usernames `user1`, `user2`, `user3` only (as virtdomains is off).",
-    "candidate_write": "Target file: tests/caldav_test_servers.yaml.example\nChange for V1 only:\n- Default username expression: ${CYRUS_USERNAME:-user1}\n- Default password expression: ${CYRUS_PASSWORD:-x}\n- Default username list: [user1, user2, user3] (no @domains)\nRationale: virtdomains is off, so use plain Cyrus usernames."
+    "candidate_write": "Target file: tests/caldav_test_servers.yaml.example\nChange for V1 only:\n- Default username expression: ${CYRUS_USERNAME:-user1}\n- Default password expression: ${CYRUS_PASSWORD:-x}\n- Default username list: [user1, user2, user3] (no @domains)\nRationale: virtdomains is off, so use plain Cyrus usernames.",
+    "truncated_fields": [
+      "old_action",
+      "invalidated_clause"
+    ]
   },
   {
     "item_id": "8907af07b133",
@@ -489,7 +630,8 @@
     "invalidated_clause": "send us a [pull request](http://help.github.com/send-pull-requests/).",
     "new_clause": "send us a [pull request](https://help.github.com/articles/creating-a-pull-request/).",
     "candidate_action": "Use the updated pull request instructions URL: https://help.github.com/articles/creating-a-pull-request/.",
-    "candidate_write": "Updated README.md to include the text: “send us a [pull request](https://help.github.com/articles/creating-a-pull-request/).”"
+    "candidate_write": "Updated README.md to include the text: “send us a [pull request](https://help.github.com/articles/creating-a-pull-request/).”",
+    "truncated_fields": []
   },
   {
     "item_id": "89ab8424a37c",
@@ -501,7 +643,11 @@
     "invalidated_clause": "V0 default credential values and domain-qualified usernames are no longer valid for the intended test image behavior: `${CYRUS_USERNAME:-testuser@test.local}`, `${CYRUS_PASSWORD:-testpassword}`, and domain-qualified `username: user1@test.local`, `username: user2@test.local`, `username: user3@testual",
     "new_clause": "Use plain usernames (virtdomains off): `V1: username: ${CYRUS_USERNAME:-user1} password: ${CYRUS_PASSWORD:-x}` and set usernames as `username: user1`, `username: user2`, `username: user3`.",
     "candidate_action": "Update tests/caldav_test_servers.yaml.example server credential defaults and username list: V1 should use `${CYRUS_USERNAME:-user1}` (plain usernames, no domains) and `${CYRUS_PASSWORD:-x}`, with usernames `user1`, `user2`, `user3` only (as virtdomains is off).",
-    "candidate_write": "repair_v1"
+    "candidate_write": "repair_v1",
+    "truncated_fields": [
+      "old_action",
+      "invalidated_clause"
+    ]
   },
   {
     "item_id": "8d56d54c4e1f",
@@ -513,7 +659,8 @@
     "invalidated_clause": "[DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#d-transparency)",
     "new_clause": "[DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#e-transparency)",
     "candidate_action": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#e-transparency), after redacting personal information, we publish all complete and actionable takedown notices at <https://github.com/github/dmca>.",
-    "candidate_write": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#e-transparency), after redacting personal information, we publish all complete and actionable takedown notices at <https://github.com/github/dmca>."
+    "candidate_write": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#e-transparency), after redacting personal information, we publish all complete and actionable takedown notices at <https://github.com/github/dmca>.",
+    "truncated_fields": []
   },
   {
     "item_id": "9161c6b8c3c8",
@@ -525,7 +672,8 @@
     "invalidated_clause": "The trailing extra closing character/tag: the final `</a>` at the end of V0 (`...to begin!</a>`).",
     "new_clause": "Remove the superfluous `</a>` so the string ends with `...to begin!` (no extra closing tag).",
     "candidate_action": "Use the corrected OAuth authorization link snippet with balanced HTML tags: `<a href=\"https://github.com/login/oauth/authorize?scope=user:email&client_id=<%= client_id %>\">Click here</a> to begin!`",
-    "candidate_write": "Use this corrected OAuth authorization anchor snippet:\n`<a href=\"https://github.com/login/oauth/authorize?scope=user:email&client_id=<%= client_id %>\">Click here</a> to begin!`"
+    "candidate_write": "Use this corrected OAuth authorization anchor snippet:\n`<a href=\"https://github.com/login/oauth/authorize?scope=user:email&client_id=<%= client_id %>\">Click here</a> to begin!`",
+    "truncated_fields": []
   },
   {
     "item_id": "939169311cd8",
@@ -537,7 +685,8 @@
     "invalidated_clause": "",
     "new_clause": "{% if page.version == 'dotcom' or page.version >= 2.8 %} `base`|`string` | The name of the branch you want your changes pulled into. This should be an existing branch on the current repository. You cannot update the base branch on a pull request to point to another repository. {% endif %}",
     "candidate_action": "Keep `state` documentation as-is, and add the `base` field documentation only for the specified page versions (V1).",
-    "candidate_write": "Documentation edit rule (reusable):\n- Do not modify any `state` clause/text in content/v3/pulls.md.\n- Update `base` field documentation only for V1.\n- Leave V0 documentation untouched.\n- Ensure the V1 `base` section matches the updated conditional `base` field description for the target schema/spec."
+    "candidate_write": "Documentation edit rule (reusable):\n- Do not modify any `state` clause/text in content/v3/pulls.md.\n- Update `base` field documentation only for V1.\n- Leave V0 documentation untouched.\n- Ensure the V1 `base` section matches the updated conditional `base` field description for the target schema/spec.",
+    "truncated_fields": []
   },
   {
     "item_id": "93c72264f248",
@@ -549,7 +698,8 @@
     "invalidated_clause": "The instance-specific signature and binding: `def test_server(self) -> TestServer:` and `server = self.server` (including the prior omission of `@classmethod` and `cls` binding).",
     "new_clause": "Add `@classmethod` decorator; change signature to `def test_server(cls) -> TestServer:`; update server access to `server = cls.server`; expand the docstring with the pytest deprecation rationale about class-scoped fixtures written as plain instance methods and per-test instance freshness.",
     "candidate_action": "Replace instance method `test_server(self) -> TestServer` implementation with a classmethod implementation to match pytest behavior and ensure correct state visibility.",
-    "candidate_write": "STEP8 artifact: In `tests/test_async_integration.py`, change `def test_server(self) -> TestServer` to `@classmethod def test_server(cls) -> TestServer`. Keep the docstring about pytest deprecating class-scoped fixtures written as plain instance methods, and inside set `server = cls.server` (instead of `self.server`) before returning that `server` variable."
+    "candidate_write": "STEP8 artifact: In `tests/test_async_integration.py`, change `def test_server(self) -> TestServer` to `@classmethod def test_server(cls) -> TestServer`. Keep the docstring about pytest deprecating class-scoped fixtures written as plain instance methods, and inside set `server = cls.server` (instead of `self.server`) before returning that `server` variable.",
+    "truncated_fields": []
   },
   {
     "item_id": "95b612ae5354",
@@ -561,7 +711,15 @@
     "invalidated_clause": "Invalidated: the truncated/incomplete `save()` `only_this_recurrence` parameter section in the provided text starting from `* save() only_this_recurrence parameter is now a tristate:` through the cutoff at `None is used in the add_objec` (because it is incomplete and therefore not actionable as-is).",
     "new_clause": "New/complete: `save()` `only_this_recurrence` is now a tristate: `True` (default) keeps previous behaviour—if saving a recurrence, it is merged into the master event as an exception to the RRULE; if the master object does not exist, raise `NotFoundError`. `None` (new) behaves like `True` except that",
     "candidate_action": "Update the v3.2.1 `Calendar.delete()` and `save()` changelog text by replacing the existing partial/truncated `save()` tri-state description with a complete, internally consistent statement; preserve the already-validated `Calendar.delete()` `wipe` description and the intention that async tests in `",
-    "candidate_write": "CHANGELOG.md (v3.2.1)\n\n- Calendar.save(...)\n  - Replace the truncated/partial tri-state parameter description with a complete sentence/block describing the parameter behavior (matching the documented semantics used for the delete(wipe=...) wording style).\n  - Do not change the existing validated Calendar.delete(wipe=...) section (including full wipe semantics).\n  - Preserve the sentence/intent that async integration tests cover this behavior change."
+    "candidate_write": "CHANGELOG.md (v3.2.1)\n\n- Calendar.save(...)\n  - Replace the truncated/partial tri-state parameter description with a complete sentence/block describing the parameter behavior (matching the documented semantics used for the delete(wipe=...) wording style).\n  - Do not change the existing validated Calendar.delete(wipe=...) section (including full wipe semantics).\n  - Preserve the sentence/intent that async integration tests cover this behavior change.",
+    "truncated_fields": [
+      "old_action",
+      "current_action",
+      "preserved_clause",
+      "invalidated_clause",
+      "new_clause",
+      "candidate_action"
+    ]
   },
   {
     "item_id": "99febecbc57d",
@@ -573,7 +731,8 @@
     "invalidated_clause": "You can pass two objects: `required_status_checks` and `restrictions`.",
     "new_clause": "You must pass two objects: `required_status_checks` and `restrictions`. Both can have the value `null` for disabled.",
     "candidate_action": "Specify that users must pass `required_status_checks` and `restrictions`, and that both may be `null` to disable.",
-    "candidate_write": "For the `required_status_checks` and `restrictions` inputs: users must supply both parameters. To disable either feature, set the corresponding value to `null` (both may be `null`)."
+    "candidate_write": "For the `required_status_checks` and `restrictions` inputs: users must supply both parameters. To disable either feature, set the corresponding value to `null` (both may be `null`).",
+    "truncated_fields": []
   },
   {
     "item_id": "a0b959629ebf",
@@ -585,7 +744,8 @@
     "invalidated_clause": "The instance-specific signature and binding: `def test_server(self) -> TestServer:` and `server = self.server` (including the prior omission of `@classmethod` and `cls` binding).",
     "new_clause": "Add `@classmethod` decorator; change signature to `def test_server(cls) -> TestServer:`; update server access to `server = cls.server`; expand the docstring with the pytest deprecation rationale about class-scoped fixtures written as plain instance methods and per-test instance freshness.",
     "candidate_action": "Use `@classmethod def test_server(cls) -> TestServer` and access `server = cls.server` instead of `server = self.server`, keeping the docstring rationale about pytest deprecating class-scoped fixtures written as plain instance methods.",
-    "candidate_write": "Apply to `tests/test_async_integration.py`:\n- Change `def test_server(self) -> TestServer:` to `@classmethod def test_server(cls) -> TestServer:`.\n- Replace `server = self.server` with `server = cls.server`.\n- Preserve the existing docstring text/rationale about pytest deprecating class-scoped fixtures written as plain instance methods.\n- Keep the final local `server` assignment/return pattern (e.g., `return server` or `server; return server`)."
+    "candidate_write": "Apply to `tests/test_async_integration.py`:\n- Change `def test_server(self) -> TestServer:` to `@classmethod def test_server(cls) -> TestServer:`.\n- Replace `server = self.server` with `server = cls.server`.\n- Preserve the existing docstring text/rationale about pytest deprecating class-scoped fixtures written as plain instance methods.\n- Keep the final local `server` assignment/return pattern (e.g., `return server` or `server; return server`).",
+    "truncated_fields": []
   },
   {
     "item_id": "a95b10b70cab",
@@ -597,7 +757,10 @@
     "invalidated_clause": "The original intended continuation of the README after “Though” from V0 is invalidated by the inserted “close-source/open-source removal” message (the remainder is no longer the same text).",
     "new_clause": "Insert the message: the developer.github.com website is no longer open-source; move the repo to a GitHub-archive organization; thank contributors; cite reasons for closing (updated documentation/workflow changed; open-source documentation/maintenance constraints; focus on what’s important without “g",
     "candidate_action": "Keep the repository’s developer site README as-is (original content in README.md, continuing from “Though” after V0).",
-    "candidate_write": ""
+    "candidate_write": "",
+    "truncated_fields": [
+      "new_clause"
+    ]
   },
   {
     "item_id": "ad74e78889a9",
@@ -609,7 +772,8 @@
     "invalidated_clause": "(none)",
     "new_clause": "This list includes personal user accounts and organization accounts.",
     "candidate_action": "verify",
-    "candidate_write": "users_signup_order_including_orgs\n- Input: Retrieve all personal + organization user accounts.\n- Sort: By signup timestamp/order on {{ site.data.variables.product.product_name }} (use the primary signup-order field; tie-break with account id/created_at if needed).\n- Output: A single ordered list of all accounts (personal + org) in signup order."
+    "candidate_write": "users_signup_order_including_orgs\n- Input: Retrieve all personal + organization user accounts.\n- Sort: By signup timestamp/order on {{ site.data.variables.product.product_name }} (use the primary signup-order field; tie-break with account id/created_at if needed).\n- Output: A single ordered list of all accounts (personal + org) in signup order.",
+    "truncated_fields": []
   },
   {
     "item_id": "ae663cc10da0",
@@ -621,7 +785,8 @@
     "invalidated_clause": "\"and your agreement with Microsoft does not already provide for the inclusion of these terms\"",
     "new_clause": "Remove the condition that your Microsoft agreement does not already provide for the inclusion of these terms; amendment status applies whenever you license GitHub through Microsoft.",
     "candidate_action": "If you license GitHub through Microsoft, these terms shall be considered an amendment to the Microsoft Product Terms for GitHub Offerings for the duration of your use of the pre-release software.",
-    "candidate_write": "Operational decision (STEP 8/8): Use ACTION B — “If you license GitHub through Microsoft, these terms shall be considered an amendment to the Microsoft Product Terms for GitHub Offerings for the duration of your use of the pre-release software.”"
+    "candidate_write": "Operational decision (STEP 8/8): Use ACTION B — “If you license GitHub through Microsoft, these terms shall be considered an amendment to the Microsoft Product Terms for GitHub Offerings for the duration of your use of the pre-release software.”",
+    "truncated_fields": []
   },
   {
     "item_id": "b224200f6654",
@@ -633,7 +798,11 @@
     "invalidated_clause": "`except FileNotFoundError:` (catch only the missing-file case).",
     "new_clause": "`except OSError as e:` ... log `config file {fn} not usable: {e}` and continue treating it as “no config here”.",
     "candidate_action": "Broaden the optional config probe exception handling to catch `OSError as e` instead of only `FileNotFoundError`, and treat any `OSError` (missing file, directory path, permission issues, etc.) as “no usable config here”; log a debug message including the exception details. This prevents `IsADir`/`O",
-    "candidate_write": "Optional config probe hardening (for `caldav/config.py`):\n- Wrap the optional config file read/probe in `try: ... except OSError as e:` (do not limit to `FileNotFoundError`).\n- On any caught `OSError`, treat as “no usable config here”: return defaults / continue without loading config.\n- Emit debug log with exception details, e.g. `logger.debug(\"Optional config probe failed: %s\", e)`.\n- Ensure this covers cases like directory path passed in (`IsADir`), permission denied, etc., without raising."
+    "candidate_write": "Optional config probe hardening (for `caldav/config.py`):\n- Wrap the optional config file read/probe in `try: ... except OSError as e:` (do not limit to `FileNotFoundError`).\n- On any caught `OSError`, treat as “no usable config here”: return defaults / continue without loading config.\n- Emit debug log with exception details, e.g. `logger.debug(\"Optional config probe failed: %s\", e)`.\n- Ensure this covers cases like directory path passed in (`IsADir`), permission denied, etc., without raising.",
+    "truncated_fields": [
+      "current_action",
+      "candidate_action"
+    ]
   },
   {
     "item_id": "b42ca13ddf85",
@@ -645,7 +814,12 @@
     "invalidated_clause": "The previous long “close-source the site” explanation (including the earlier statements about already having close-sourced materials located elsewhere, keeping the repository open-source, and the detailed discussion of documenting/reviews and maintaining open-source commitments).",
     "new_clause": "# developer.github.com **NOTE: The developer.github.com website is no longer open-source.** We have moved this repository into [our github-archive organization](https://github.com/github-archive) to signify that we are no longer accepting open-source contributions to this repository. We want to note",
     "candidate_action": "Update the README to a new notice stating that developer.github.com is no longer open-source, that the repository has been moved to the github-archive organization, and that the rationale is (1) documentation for unreleased features is already close-sourced, and (2) maintaining open-source became a)",
-    "candidate_write": "## Notice (repository archived)\n**developer.github.com is no longer open-source.**\n\nThis repository/workflow has been **moved to the `github-archive` organization**.\n\n### Why\n1. Documentation for unreleased features is already close-sourced.\n2. Maintaining open-source became impractical/incomplete due to ongoing updates and the need to keep documentation and changes aligned with the now close-sourced development lifecycle."
+    "candidate_write": "## Notice (repository archived)\n**developer.github.com is no longer open-source.**\n\nThis repository/workflow has been **moved to the `github-archive` organization**.\n\n### Why\n1. Documentation for unreleased features is already close-sourced.\n2. Maintaining open-source became impractical/incomplete due to ongoing updates and the need to keep documentation and changes aligned with the now close-sourced development lifecycle.",
+    "truncated_fields": [
+      "current_action",
+      "new_clause",
+      "candidate_action"
+    ]
   },
   {
     "item_id": "b4c167ee29ad",
@@ -657,7 +831,8 @@
     "invalidated_clause": "(none)",
     "new_clause": "This list includes personal user accounts and organization accounts.",
     "candidate_action": "Lists all users, in the order that they signed up on {{ site.data.variables.product.product_name }}.",
-    "candidate_write": "TODO: Execute tool command to retrieve and output the full user list ordered by signup timestamp for {{ site.data.variables.product.product_name }}."
+    "candidate_write": "TODO: Execute tool command to retrieve and output the full user list ordered by signup timestamp for {{ site.data.variables.product.product_name }}.",
+    "truncated_fields": []
   },
   {
     "item_id": "b9b1a76b3431",
@@ -669,7 +844,12 @@
     "invalidated_clause": "The previous long “close-source the site” explanation (including the earlier statements about already having close-sourced materials located elsewhere, keeping the repository open-source, and the detailed discussion of documenting/reviews and maintaining open-source commitments).",
     "new_clause": "# developer.github.com **NOTE: The developer.github.com website is no longer open-source.** We have moved this repository into [our github-archive organization](https://github.com/github-archive) to signify that we are no longer accepting open-source contributions to this repository. We want to note",
     "candidate_action": "Update the README to a new notice stating that developer.github.com is no longer open-source, that the repository has been moved to the github-archive organization, and that the rationale is (1) documentation for unreleased features is already close-sourced, and (2) maintaining open-source became a)",
-    "candidate_write": "## Notice\n\nThis repository (developer.github.com) is no longer open-source.\n\n- **Repository moved:** The source has been transferred to the **github-archive** organization.\n- **Rationale:**\n  1. Documentation for **unreleased features** is already **close-sourced**.\n  2. Maintaining an open-source repository became **impractical**.\n\nFor the latest content, please refer to the archived repository under **github-archive**."
+    "candidate_write": "## Notice\n\nThis repository (developer.github.com) is no longer open-source.\n\n- **Repository moved:** The source has been transferred to the **github-archive** organization.\n- **Rationale:**\n  1. Documentation for **unreleased features** is already **close-sourced**.\n  2. Maintaining an open-source repository became **impractical**.\n\nFor the latest content, please refer to the archived repository under **github-archive**.",
+    "truncated_fields": [
+      "current_action",
+      "new_clause",
+      "candidate_action"
+    ]
   },
   {
     "item_id": "ba8fae227db5",
@@ -681,7 +861,8 @@
     "invalidated_clause": "send us a [pull request](http://help.github.com/send-pull-requests/).",
     "new_clause": "send us a [pull request](https://help.github.com/articles/creating-a-pull-request/).",
     "candidate_action": "Use the updated pull request instructions URL: https://help.github.com/articles/creating-a-pull-request/.",
-    "candidate_write": "Next consumer artifact: Ensure README.md contains the updated pull request instructions link (https://help.github.com/articles/creating-a-pull-request/) and that it includes the phrase “send us a pull request” and/or “send us a [pull request](https://help.github.com/articles/creating-a-pull-request/).”"
+    "candidate_write": "Next consumer artifact: Ensure README.md contains the updated pull request instructions link (https://help.github.com/articles/creating-a-pull-request/) and that it includes the phrase “send us a pull request” and/or “send us a [pull request](https://help.github.com/articles/creating-a-pull-request/).”",
+    "truncated_fields": []
   },
   {
     "item_id": "bebcccc1754f",
@@ -693,7 +874,10 @@
     "invalidated_clause": "V0 Section 4(a) wording and placement (default data controller description and the DPA handoff) together with V0 Section 4(b) cross-reference to “Section 4(c) below” is invalidated by the reordered structure in V1 (telemetry consent becomes Section 4(a) and cross-reference changes).",
     "new_clause": "V1 Section 4(a): Consent to Data Collection — telemetry collection and use permitted under the GitHub Data Protection Agreement or GitHub Privacy Statement, subject to the limitations in Section 4(b) below; your use operates as consent to these practices.",
     "candidate_action": "Reorder and renumber Section 4 clauses by moving the telemetry consent clause (V0 Section 4(b)) before the processing-of-personal-data section, and update cross-references accordingly.",
-    "candidate_write": "TELEMETRY CONSENT CLAUSE (for next consumer): In V1, make this clause the first item in Section 4 as Section 4(a) “Consent to Data Collection—telemetry collection and use permitted under the GitHub Data Protection Agreement or GitHub Privacy Statement, subject to the limitations in Section 4(b) below; your use operates as consent to these practices.” Ensure any limitations language is located in Section 4(b), and all cross-references from 4(a) point to 4(b."
+    "candidate_write": "TELEMETRY CONSENT CLAUSE (for next consumer): In V1, make this clause the first item in Section 4 as Section 4(a) “Consent to Data Collection—telemetry collection and use permitted under the GitHub Data Protection Agreement or GitHub Privacy Statement, subject to the limitations in Section 4(b) below; your use operates as consent to these practices.” Ensure any limitations language is located in Section 4(b), and all cross-references from 4(a) point to 4(b.",
+    "truncated_fields": [
+      "preserved_clause"
+    ]
   },
   {
     "item_id": "c1ee0ea97040",
@@ -705,7 +889,8 @@
     "invalidated_clause": "\"and your agreement with Microsoft does not already provide for the inclusion of these terms\"",
     "new_clause": "Remove the condition that your Microsoft agreement does not already provide for the inclusion of these terms; amendment status applies whenever you license GitHub through Microsoft.",
     "candidate_action": "If you license GitHub through Microsoft and your agreement with Microsoft does not already provide for the inclusion of these terms, these terms shall be considered an amendment to the Microsoft Product Terms for GitHub Offerings for the duration of your use of the pre-release software.",
-    "candidate_write": "Clause selection: apply Amendment condition only when Microsoft license does not already include these pre-release terms; otherwise use the default amendment rule without needing the condition."
+    "candidate_write": "Clause selection: apply Amendment condition only when Microsoft license does not already include these pre-release terms; otherwise use the default amendment rule without needing the condition.",
+    "truncated_fields": []
   },
   {
     "item_id": "c273729b24da",
@@ -717,7 +902,8 @@
     "invalidated_clause": "via our [contact form](https://support.github.com/contact?tags=docs-private-information)",
     "new_clause": "via our [contact form](https://support.github.com/contact/private-information)",
     "candidate_action": "Submit your request to remove private information via our contact form at https://support.github.com/contact/private-information. Include a plain-text version of your request in the body of your message. Sending your request in an attachment may result in processing delays.",
-    "candidate_write": "Request submission instructions (for next consumer):\n- Use form URL: https://support.github.com/contact/private-information\n- In the message body, paste a plain-text request using the provided template.\n- Avoid sending the request as an attachment to prevent processing delays."
+    "candidate_write": "Request submission instructions (for next consumer):\n- Use form URL: https://support.github.com/contact/private-information\n- In the message body, paste a plain-text request using the provided template.\n- Avoid sending the request as an attachment to prevent processing delays.",
+    "truncated_fields": []
   },
   {
     "item_id": "d194d6fb10a8",
@@ -729,7 +915,8 @@
     "invalidated_clause": "The trailing extra closing character/tag: the final `</a>` at the end of V0 (`...to begin!</a>`).",
     "new_clause": "Remove the superfluous `</a>` so the string ends with `...to begin!` (no extra closing tag).",
     "candidate_action": "verify",
-    "candidate_write": "Use this corrected snippet for Step 2/8: `<a href=\"https://github.com/login/oauth/authorize?scope=user:email&client_id=<%= client_id %>\">Click here</a> to begin!`"
+    "candidate_write": "Use this corrected snippet for Step 2/8: `<a href=\"https://github.com/login/oauth/authorize?scope=user:email&client_id=<%= client_id %>\">Click here</a> to begin!`",
+    "truncated_fields": []
   },
   {
     "item_id": "d2215bda15c3",
@@ -741,7 +928,8 @@
     "invalidated_clause": "[DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#d-transparency)",
     "new_clause": "[DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#e-transparency)",
     "candidate_action": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#e-transparency), after redacting personal information, we publish all complete and actionable takedown notices at <https://github.com/github/dmca>.",
-    "candidate_write": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#e-transparency), after redacting personal information, we publish all complete and actionable takedown notices at <https://github.com/github/dmca>."
+    "candidate_write": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#e-transparency), after redacting personal information, we publish all complete and actionable takedown notices at <https://github.com/github/dmca>.",
+    "truncated_fields": []
   },
   {
     "item_id": "e03d2929210e",
@@ -753,7 +941,10 @@
     "invalidated_clause": "The governing payment section reference: [Section K. Payment](/site-policy/github-terms/github-terms-of-service#k-payment).",
     "new_clause": "The governing payment section reference: [Section L. Payment](/site-policy/github-terms/github-terms-of-service#l-payment).",
     "candidate_action": "Use [Section L. Payment](/site-policy/github-terms/github-terms-of-service#l-payment) (or the analogous section of the applicable GitHub Terms) as the governing terms for payment and fees for Developer Product purchases.",
-    "candidate_write": "Governing payment terms for Developer Product purchases: apply [Section L. Payment](/site-policy/github-terms/github-terms-of-service#l-payment) (or the analogous section of the applicable GitHub Terms) to govern payment and fees."
+    "candidate_write": "Governing payment terms for Developer Product purchases: apply [Section L. Payment](/site-policy/github-terms/github-terms-of-service#l-payment) (or the analogous section of the applicable GitHub Terms) to govern payment and fees.",
+    "truncated_fields": [
+      "preserved_clause"
+    ]
   },
   {
     "item_id": "e29658e543a1",
@@ -765,7 +956,13 @@
     "invalidated_clause": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#d-transparency)",
     "new_clause": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#e-transparency)",
     "candidate_action": "As noted in our [DMCA Takedown Policy](/site-policy/content-removal-policies/dmca-takedown-policy#d-transparency), after redacting personal information, we publish all complete and actionable counter notices at <https://github.com/github/dmca>. Please also note that, although we will only publicly (",
-    "candidate_write": "After redacting personal information, we publish all complete and actionable counter notices at <https://github.com/github/dmca>. Please also note that, although we will only publicly publish redacted notices, we may provide a complete unredacted copy of any notices we receive directly to any interested party, at our discretion."
+    "candidate_write": "After redacting personal information, we publish all complete and actionable counter notices at <https://github.com/github/dmca>. Please also note that, although we will only publicly publish redacted notices, we may provide a complete unredacted copy of any notices we receive directly to any interested party, at our discretion.",
+    "truncated_fields": [
+      "old_action",
+      "current_action",
+      "preserved_clause",
+      "candidate_action"
+    ]
   },
   {
     "item_id": "e993fc58277b",
@@ -777,7 +974,8 @@
     "invalidated_clause": "The specific list of extra sections mentioned in V0 (executive summary, Breaking/Potentially Breaking Changes, list of GitHub issues/PRs closed/merged, test framework changes, tests run, work effort, credits, time per release, calendar servers tested).",
     "new_clause": "“...but I frequently add some sections in it.”",
     "candidate_action": "Ensure CHANGELOG.md adheres to Keep a Changelog (v1.1.0), but note that you frequently add extra sections.",
-    "candidate_write": "# CHANGELOG.md — Keep a Changelog (v1.1.0) Compliance Checklist (with custom sections)\n\n- [ ] Header: Use the Keep a Changelog v1.1.0 format (title + optional intro), and keep consistent markdown styling.\n- [ ] Unreleased section exists: Include a top-level `## [Unreleased]` section.\n- [ ] Release sections exist: For each release, use `## [x.y.z] - YYYY-MM-DD`.\n- [ ] Standard subsections: Under each release (and usually under Unreleased) include the conventional subsections where applicable:"
+    "candidate_write": "# CHANGELOG.md — Keep a Changelog (v1.1.0) Compliance Checklist (with custom sections)\n\n- [ ] Header: Use the Keep a Changelog v1.1.0 format (title + optional intro), and keep consistent markdown styling.\n- [ ] Unreleased section exists: Include a top-level `## [Unreleased]` section.\n- [ ] Release sections exist: For each release, use `## [x.y.z] - YYYY-MM-DD`.\n- [ ] Standard subsections: Under each release (and usually under Unreleased) include the conventional subsections where applicable:",
+    "truncated_fields": []
   },
   {
     "item_id": "eb25cc2b6d9c",
@@ -789,7 +987,11 @@
     "invalidated_clause": "The original intended continuation of the README after “Though” from V0 is invalidated by the inserted “close-source/open-source removal” message (the remainder is no longer the same text).",
     "new_clause": "Insert the message: the developer.github.com website is no longer open-source; move the repo to a GitHub-archive organization; thank contributors; cite reasons for closing (updated documentation/workflow changed; open-source documentation/maintenance constraints; focus on what’s important without “g",
     "candidate_action": "Replace/insert a block of text explaining a decision to close/remove open-source project site stems/content (base64-encoded in V1), including the rationale and commitment request for closed-source/open-archived organization handling.",
-    "candidate_write": "## Project site content policy: “stems/content” (open vs. closed)\n\nWe are updating the repository’s public-facing materials to **close/remove “stems/content”** that were previously offered as part of this open-source project. Going forward, any repository or website pages/artifacts that include **stems/content** may be **archived, restricted, or removed**.\n\n### Why we’re making this change\n- **Long-term sustainability:** maintaining and supporting public “stems/content” at scale is costly and we"
+    "candidate_write": "## Project site content policy: “stems/content” (open vs. closed)\n\nWe are updating the repository’s public-facing materials to **close/remove “stems/content”** that were previously offered as part of this open-source project. Going forward, any repository or website pages/artifacts that include **stems/content** may be **archived, restricted, or removed**.\n\n### Why we’re making this change\n- **Long-term sustainability:** maintaining and supporting public “stems/content” at scale is costly and we",
+    "truncated_fields": [
+      "new_clause",
+      "candidate_write"
+    ]
   },
   {
     "item_id": "edae304e4a5e",
@@ -801,7 +1003,8 @@
     "invalidated_clause": "",
     "new_clause": "You cannot submit a pull request to one repository that requests a merge to a base of another repository.",
     "candidate_action": "verify",
-    "candidate_write": "Artifact (for next consumer): Confirm `base` field definition in `content/v3/pulls.md` matches V0 text: (1) requiredness, (2) must be an existing branch in current repo, (3) forbids submitting PRs where the requested merge base belongs to a different repository than the PR target/repo. If identical, no change is required."
+    "candidate_write": "Artifact (for next consumer): Confirm `base` field definition in `content/v3/pulls.md` matches V0 text: (1) requiredness, (2) must be an existing branch in current repo, (3) forbids submitting PRs where the requested merge base belongs to a different repository than the PR target/repo. If identical, no change is required.",
+    "truncated_fields": []
   },
   {
     "item_id": "f140d3ddbb37",
@@ -813,7 +1016,13 @@
     "invalidated_clause": "\"raise NotImplementedError(\\\"handle_rrule=True is not yet supported for async clients\\\")\"",
     "new_clause": "Dispatch recurring completion in async mode to `_async_complete_recurring_{rrule_mode}` implementations. For `_async_complete_recurring_safe(completion_timestamp)`: if `not self._reduce_count()` then `await self._async_complete(completion_timestamp, handle_rrule=False)`; compute `next_dtstart = self",
     "candidate_action": "Replace the async behavior with an implemented async completion flow: add an `await getattr(self, \"_async_complete_recurring_%s\" % rrule_mode)(completion_timestamp)` dispatch and provide `_async_complete_recurring_safe()` and `_async_complete_recurring_thisandfuture()` async implementations that: (1",
-    "candidate_write": "Next step artifact (Step 8/8): In caldav/calendarobjectresource.py, update the recurring completion handler to dispatch asynchronously:\n- Replace direct/guarded call with:\n  - `await getattr(self, \"_async_complete_recurring_%s\" % rrule_mode)(completion_timestamp)`\n- Add async-safe methods that contain the logic directly (no calls to sync-only `_complete_recurring_*` methods):\n  - `async def _async_complete_recurring_safe(self, completion_timestamp)`\n  - `async def _async_complete_recurring_this_"
+    "candidate_write": "Next step artifact (Step 8/8): In caldav/calendarobjectresource.py, update the recurring completion handler to dispatch asynchronously:\n- Replace direct/guarded call with:\n  - `await getattr(self, \"_async_complete_recurring_%s\" % rrule_mode)(completion_timestamp)`\n- Add async-safe methods that contain the logic directly (no calls to sync-only `_complete_recurring_*` methods):\n  - `async def _async_complete_recurring_safe(self, completion_timestamp)`\n  - `async def _async_complete_recurring_this_",
+    "truncated_fields": [
+      "current_action",
+      "new_clause",
+      "candidate_action",
+      "candidate_write"
+    ]
   },
   {
     "item_id": "f84a2dc7dae0",
@@ -825,7 +1034,8 @@
     "invalidated_clause": "send us a [pull request](http://help.github.com/send-pull-requests/).",
     "new_clause": "send us a [pull request](https://help.github.com/articles/creating-a-pull-request/).",
     "candidate_action": "Use the updated pull request instructions URL: https://help.github.com/articles/creating-a-pull-request/.",
-    "candidate_write": "README.md pull request instruction link should point to: https://help.github.com/articles/creating-a-pull-request/ (ensure the phrase “send us a pull request” remains and is linked to this URL)."
+    "candidate_write": "README.md pull request instruction link should point to: https://help.github.com/articles/creating-a-pull-request/ (ensure the phrase “send us a pull request” remains and is linked to this URL).",
+    "truncated_fields": []
   },
   {
     "item_id": "fa09365bcd93",
@@ -837,7 +1047,11 @@
     "invalidated_clause": "V0 Section 4(a) wording and placement (default data controller description and the DPA handoff) together with V0 Section 4(b) cross-reference to “Section 4(c) below” is invalidated by the reordered structure in V1 (telemetry consent becomes Section 4(a) and cross-reference changes).",
     "new_clause": "V1 Section 4(a): Consent to Data Collection — telemetry collection and use permitted under the GitHub Data Protection Agreement or GitHub Privacy Statement, subject to the limitations in Section 4(b) below; your use operates as consent to these practices.",
     "candidate_action": "Reorder and renumber Section 4 clauses by moving the telemetry consent clause (V0 Section 4(b)) before the processing-of-personal-data section, and update cross-references accordingly.",
-    "candidate_write": "In github-pre-release-license-terms.md, Section 4:\n- Move the telemetry consent clause (from V0 Section 4(b)) so it is the first item in the section.\n- Renumber the remaining clauses accordingly.\n- Update internal cross-references so Section 4(a) (telemetry consent) is explicitly subject to the limitations stated in Section 4(b) (the next clause after it).\n- Preserve the consent concept: by using the pre-release software, the user’s use operates as consent to telemetry collection/use (and any関連/"
+    "candidate_write": "In github-pre-release-license-terms.md, Section 4:\n- Move the telemetry consent clause (from V0 Section 4(b)) so it is the first item in the section.\n- Renumber the remaining clauses accordingly.\n- Update internal cross-references so Section 4(a) (telemetry consent) is explicitly subject to the limitations stated in Section 4(b) (the next clause after it).\n- Preserve the consent concept: by using the pre-release software, the user’s use operates as consent to telemetry collection/use (and any関連/",
+    "truncated_fields": [
+      "preserved_clause",
+      "candidate_write"
+    ]
   },
   {
     "item_id": "fb860852205b",
@@ -849,7 +1063,11 @@
     "invalidated_clause": "",
     "new_clause": "",
     "candidate_action": "V1: Same as V0 for the introductory grant of permission and Party definitions, with no substantive change; therefore the action/meaning remains unchanged and the remainder still begins “The Parties agree as follows:”",
-    "candidate_write": "Reusable decision artifact: Select version/action B when the only difference is confirmed as non-substantive (no change to introductory permission grant or Parties definitions). Ensure the agreement body continues to start with: “The Parties agree as follows:”."
+    "candidate_write": "Reusable decision artifact: Select version/action B when the only difference is confirmed as non-substantive (no change to introductory permission grant or Parties definitions). Ensure the agreement body continues to start with: “The Parties agree as follows:”.",
+    "truncated_fields": [
+      "old_action",
+      "preserved_clause"
+    ]
   },
   {
     "item_id": "fbe559a85e3f",
@@ -861,6 +1079,11 @@
     "invalidated_clause": "",
     "new_clause": "",
     "candidate_action": "V0: Allow Qualified Users, at an educational institution (Education Partner), to use and access GitHub products listed on an Order Form solely for non-commercial, academic use; such use is permitted subject to compliance with the Agreement; define “Parties” as GitHub and Education Partner and state:",
-    "candidate_write": "Operational decision: Use V0 (ACTION A). Rationale: V1 indicates no substantive change to the introductory permission grant and Party definitions; meaning remains unchanged."
+    "candidate_write": "Operational decision: Use V0 (ACTION A). Rationale: V1 indicates no substantive change to the introductory permission grant and Party definitions; meaning remains unchanged.",
+    "truncated_fields": [
+      "old_action",
+      "preserved_clause",
+      "candidate_action"
+    ]
   }
 ]
