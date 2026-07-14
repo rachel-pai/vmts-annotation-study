@@ -1,34 +1,55 @@
-# Six-annotator VMTS study site
+# Prolific-ready VMTS annotation study
 
-Static GitHub Pages site with Firebase Anonymous Authentication and Cloud
-Firestore writes. Each of 72 items is rated by exactly three of six annotators;
-each annotator receives 36 items.
+Static GitHub Pages front end with Firebase Anonymous Authentication and Cloud
+Firestore. Everyone uses one study URL; Prolific supplies participant parameters,
+and the site transactionally assigns one of twelve 18-item batches. The original
+balanced design is preserved: 72 items, exactly three independent ratings/item.
 
-## Study flow
+## What participants see
 
-1. Intro, consent, and time/privacy explanation. The A--F assignment is read
-   from the researcher's personal URL.
-2. Label definitions and the decision-vs-write warning.
-3. One item per page with progress, required-field validation, back navigation,
-   local resume, and Firebase save status.
-4. Completion code and participant-side JSON backup.
+1. Ethics approval, researcher contact, duration, payment, risks, data handling,
+   withdrawal wording, and three explicit consent confirmations on the homepage.
+2. Prolific link validation and automatic stable batch assignment.
+3. Label instructions and 18 annotation items, with progress and local resume.
+4. A configured Prolific completion code and return button.
 
-Policy names, model names, executable labels, and other annotators' responses
-are never shown.
+Raw `PROLIFIC_PID`, `STUDY_ID`, and `SESSION_ID` values are never written to
+Firestore. The browser stores only SHA-256-derived participant/study/session keys.
+These remain pseudonymous research data and must still be handled accordingly.
 
-## Firebase setup
+## Required configuration before recruitment
 
-1. Create/register a Firebase web app and enable Anonymous Authentication.
-2. Create a Cloud Firestore database.
-3. Copy the web configuration object into `firebase-config.js`.
-4. Publish `firestore.rules` using Firebase Console or Firebase CLI. The A--F
-   assignment allowlists are compiled directly into the rules, so no public
-   configuration document is required.
+1. Fill every `CONFIGURE_*` value in `study-config.js` using the exact approved
+   ethics documents and Prolific listing. Set `ethics.status` to `APPROVED` only
+   after approval. The page deliberately blocks participation until this is done.
+2. Create/register a Firebase web app, enable Anonymous Authentication, create
+   Firestore, and put the public web configuration in `firebase-config.js`.
+3. Deploy `firestore.rules`. The public client cannot read submitted responses;
+   claims are created atomically, and writes are limited to the participant's batch.
+4. In Firebase Authentication, authorize the final `*.github.io` domain.
+5. Deploy through `.github/workflows/pages.yml` (Pages source: GitHub Actions).
 
-The rules deny all response reads and deletes. The first anonymous Firebase UID
-to open an A--F link claims that slot. Later writes require the same UID and an
-item assigned to that slot. Updates retain the original UID, annotator, and
-item.
+If assignments change, run:
+
+```bash
+python3 annotation-site/build_prolific_design.py
+```
+
+This rebuilds `data/prolific-batches.json` and the matching rule allowlists, and
+fails unless all 72 items still receive exactly three ratings.
+
+## Prolific URL
+
+Give Prolific the single GitHub Pages study URL with its standard placeholders:
+
+```text
+https://YOUR_ACCOUNT.github.io/YOUR_REPOSITORY/?PROLIFIC_PID={{%PROLIFIC_PID%}}&STUDY_ID={{%STUDY_ID%}}&SESSION_ID={{%SESSION_ID%}}
+```
+
+Set the same completion code in Prolific and `study-config.js`. Recruit exactly
+12 completed participants for the current fixed design. Use Prolific replacement
+recruitment for returned/timed-out submissions; a claimed but abandoned batch must
+be released administratively before a replacement can receive it.
 
 ## Local preview
 
@@ -36,21 +57,10 @@ item.
 python3 -m http.server 8765 --directory annotation-site
 ```
 
-Open `http://127.0.0.1:8765/?annotator=A` (or B--F).
+The production lock remains active locally until real study configuration is
+present. Do not insert invented ethics details just to bypass it.
 
-## GitHub Pages
+## Export
 
-The workflow `.github/workflows/pages.yml` deploys `annotation-site/` whenever
-site files change on `main`. In GitHub repository settings, set Pages source to
-**GitHub Actions**. Firebase Authentication must also allow the final
-`*.github.io` domain.
-
-Distribute six distinct links ending in `?annotator=A` through
-`?annotator=F`. Each person should use one browser profile throughout the
-study, because anonymous Firebase identity is persisted in that browser.
-
-## Export for analysis
-
-The researcher exports the `responses` collection from Firebase using an
-authorized administrative environment. The public website intentionally has
-no permission to read submitted labels.
+Export the `responses` collection from an authorized Firebase administrative
+environment. The website intentionally cannot read submitted annotations.

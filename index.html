@@ -6,6 +6,7 @@
   <title>Versioned Memory Annotation Study</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="ux.css">
+  <link rel="stylesheet" href="prolific.css">
 </head>
 <body>
   <header class="topbar"><div class="brand">VMTS Human Validation</div><div id="saveState" class="save-state">Not connected</div></header>
@@ -13,10 +14,11 @@
     <section id="intro" class="screen active">
       <div class="hero"><p class="eyebrow">Research annotation study</p><h1>How should an agent respond when persistent information changes?</h1>
       <p class="lede">You will compare an earlier instruction with its current version, then make four judgments and one confidence rating.</p></div>
-      <div class="card grid-two"><div><h2>What you will do</h2><ul><li>Review the label definitions before starting.</li><li>Annotate 36 study items in two sessions of about 18.</li><li>Judge only the text shown—do not search externally.</li><li>Work independently and do not discuss answers.</li></ul></div>
-      <div><h2>Time and privacy</h2><ul><li>About 45–110 minutes total.</li><li>You may stop and resume on the same browser.</li><li>We store an anonymous participant ID, labels, confidence, notes, and timestamps.</li><li>Do not enter personal information in notes.</li></ul></div></div>
-      <div class="card consent"><label><input id="consentCheck" type="checkbox"> I am at least 18, have read the information above, and voluntarily consent to participate.</label>
-      <p class="link-note">Your study link assigns your anonymous annotation set automatically. No name, email, or participant code is collected.</p>
+      <div id="ethicsCard" class="card ethics-card" aria-live="polite"><div><p class="eyebrow">Ethics approval</p><h2 id="ethicsStatus">Checking study configuration…</h2></div><dl><div><dt>Institution</dt><dd id="ethicsInstitution">—</dd></div><div><dt>Reference</dt><dd id="ethicsReference">—</dd></div><div><dt>Approved</dt><dd id="ethicsDate">—</dd></div><div><dt>Research contact</dt><dd id="ethicsContact">—</dd></div></dl><p id="ethicsNotice" class="link-note"></p></div>
+      <div class="card grid-two"><div><h2>What you will do</h2><ul><li>Review the label definitions before starting.</li><li>Annotate 18 study items.</li><li>Judge only the text shown—do not search externally.</li><li>Work independently and do not discuss answers.</li></ul></div>
+      <div><h2>Time, payment, and privacy</h2><ul><li id="durationText">Estimated duration: see study information.</li><li id="paymentText">Payment: see the Prolific study listing.</li><li>Your Prolific URL identifiers are converted to one-way hashes before storage; we also store labels, confidence, notes, and timestamps.</li><li>Do not enter personal information in notes. You may stop at any time before submitting.</li></ul></div></div>
+      <div class="card consent"><h2>Consent</h2><label><input id="ageCheck" type="checkbox"> I confirm that I am at least 18 years old.</label><label><input id="infoCheck" type="checkbox"> I have read the study information, including data use, risks, payment, and contact details above.</label><label><input id="consentCheck" type="checkbox"> I voluntarily consent to participate and understand that I may stop before submission without giving a reason.</label>
+      <p id="participantStatus" class="link-note">Checking your Prolific study link…</p>
       <p id="introError" class="error" role="alert"></p><button id="beginBtn" class="primary">Continue to instructions</button></div>
     </section>
 
@@ -33,7 +35,7 @@
     </section>
 
     <section id="annotate" class="screen">
-      <div class="progress-wrap"><div><span id="counter">Item 1 of 36</span><span id="sessionHint"></span></div><div class="progress"><i id="progressBar"></i></div></div>
+      <div class="progress-wrap"><div><span id="counter">Item 1</span><span id="sessionHint"></span></div><div class="progress"><i id="progressBar"></i></div></div>
       <article class="task-layout">
         <div class="evidence-column">
           <div id="truncationWarning" class="truncation-warning" role="note" hidden></div>
@@ -56,8 +58,8 @@
       </article>
     </section>
 
-    <section id="complete" class="screen"><div class="finish-card"><div class="check">✓</div><h1>Thank you—your annotations are complete.</h1><p>All 36 responses have been saved. Keep the completion code below for your records.</p><code id="completionCode"></code><button id="exportBtn" class="secondary">Download my backup</button></div></section>
+    <section id="complete" class="screen"><div class="finish-card"><div class="check">✓</div><h1>Thank you—your annotations are complete.</h1><p id="completeText">All responses have been saved. Return to Prolific to record your submission.</p><code id="completionCode"></code><div class="finish-actions"><a id="prolificReturnBtn" class="primary" href="#">Return to Prolific</a><button id="exportBtn" class="secondary">Download my backup</button></div></div></section>
   </main>
-  <footer>Anonymous research annotation · No model or policy identity is shown</footer>
+  <footer>Pseudonymous research annotation · No model or policy identity is shown</footer>
   <script type="module" src="app.js"></script>
 </body></html>
