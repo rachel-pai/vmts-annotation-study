@@ -10,4 +10,6 @@
 .link-note{color:var(--muted)}
 .finish-actions{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap}
 .finish-actions a{text-decoration:none}
+.consent-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:18px}
+#declineReturnBtn{text-decoration:none;display:inline-block;margin-top:12px}
 @media(max-width:850px){.ethics-card dl{grid-template-columns:1fr}.ethics-card>div:first-child{display:block}}

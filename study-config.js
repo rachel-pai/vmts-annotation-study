@@ -19,6 +19,7 @@ export const studyConfig = {
   prolific: {
     completionCode: "CONFIGURE_COMPLETION_CODE",
     completionUrl: "https://app.prolific.com/submissions/complete?cc=CONFIGURE_COMPLETION_CODE",
+    declineUrl: "https://app.prolific.com/",
     expectedStudyId: ""
   }
 };

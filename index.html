@@ -14,12 +14,12 @@
     <section id="intro" class="screen active">
       <div class="hero"><p class="eyebrow">Research annotation study</p><h1>How should an agent respond when persistent information changes?</h1>
       <p class="lede">You will compare an earlier instruction with its current version, then make four judgments and one confidence rating.</p></div>
-      <div id="ethicsCard" class="card ethics-card" aria-live="polite"><div><p class="eyebrow">Ethics approval</p><h2 id="ethicsStatus">Checking study configuration…</h2></div><dl><div><dt>Institution</dt><dd id="ethicsInstitution">—</dd></div><div><dt>Reference</dt><dd id="ethicsReference">—</dd></div><div><dt>Approved</dt><dd id="ethicsDate">—</dd></div><div><dt>Research contact</dt><dd id="ethicsContact">—</dd></div></dl><p id="ethicsNotice" class="link-note"></p></div>
+      <div id="ethicsCard" class="card ethics-card" aria-live="polite" hidden><div><p class="eyebrow">Research governance</p><h2 id="ethicsStatus">Study review information</h2></div><dl><div><dt>Institution</dt><dd id="ethicsInstitution">—</dd></div><div><dt>Reference</dt><dd id="ethicsReference">—</dd></div><div><dt>Approved</dt><dd id="ethicsDate">—</dd></div><div><dt>Research contact</dt><dd id="ethicsContact">—</dd></div></dl><p id="ethicsNotice" class="link-note"></p></div>
       <div class="card grid-two"><div><h2>What you will do</h2><ul><li>Review the label definitions before starting.</li><li>Annotate 18 study items.</li><li>Judge only the text shown—do not search externally.</li><li>Work independently and do not discuss answers.</li></ul></div>
       <div><h2>Time, payment, and privacy</h2><ul><li id="durationText">Estimated duration: see study information.</li><li id="paymentText">Payment: see the Prolific study listing.</li><li>Your Prolific URL identifiers are converted to one-way hashes before storage; we also store labels, confidence, notes, and timestamps.</li><li>Do not enter personal information in notes. You may stop at any time before submitting.</li></ul></div></div>
-      <div class="card consent"><h2>Consent</h2><label><input id="ageCheck" type="checkbox"> I confirm that I am at least 18 years old.</label><label><input id="infoCheck" type="checkbox"> I have read the study information, including data use, risks, payment, and contact details above.</label><label><input id="consentCheck" type="checkbox"> I voluntarily consent to participate and understand that I may stop before submission without giving a reason.</label>
+      <div class="card consent"><h2>Informed consent</h2><p>By choosing <b>I agree and participate</b>, I confirm that I am at least 18 years old, have read the study information above, voluntarily consent to take part, and understand that I may stop before submission without giving a reason.</p>
       <p id="participantStatus" class="link-note">Checking your Prolific study link…</p>
-      <p id="introError" class="error" role="alert"></p><button id="beginBtn" class="primary">Continue to instructions</button></div>
+      <p id="introError" class="error" role="alert"></p><div class="consent-actions"><button id="beginBtn" class="primary">I agree and participate</button><button id="declineBtn" class="secondary">I do not agree — exit</button></div></div>
     </section>
 
     <section id="instructions" class="screen">
@@ -59,6 +59,7 @@
     </section>
 
     <section id="complete" class="screen"><div class="finish-card"><div class="check">✓</div><h1>Thank you—your annotations are complete.</h1><p id="completeText">All responses have been saved. Return to Prolific to record your submission.</p><code id="completionCode"></code><div class="finish-actions"><a id="prolificReturnBtn" class="primary" href="#">Return to Prolific</a><button id="exportBtn" class="secondary">Download my backup</button></div></div></section>
+    <section id="declined" class="screen"><div class="finish-card"><h1>You have left the study.</h1><p>You did not consent to participate. No annotation response has been submitted. You may close this page or return to Prolific.</p><a id="declineReturnBtn" class="primary" href="https://app.prolific.com/">Return to Prolific</a></div></section>
   </main>
   <footer>Pseudonymous research annotation · No model or policy identity is shown</footer>
   <script type="module" src="app.js"></script>
