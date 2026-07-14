@@ -1,0 +1,50 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function validResponse(r) {
+      return r.keys().hasOnly(['annotatorId','itemId','uid','submitted',
+        'revision_relation_label','action_consistency_label','write_consistency_label',
+        'mixed_validity_preservation_label','confidence_1_to_5','notes',
+        'clientUpdatedAt','serverUpdatedAt'])
+        && r.revision_relation_label in ['replace','narrow','expand','exception','cancel','reschedule','clarify','unclear']
+        && r.action_consistency_label in ['current','legacy','mixed','abstention','unclear']
+        && r.write_consistency_label in ['current','legacy','mixed','empty','unclear']
+        && r.mixed_validity_preservation_label in ['preserved','corrupted_or_omitted','not_applicable','unclear']
+        && r.confidence_1_to_5 in ['1','2','3','4','5']
+        && r.notes is string && r.notes.size() <= 500
+        && ((r.annotatorId == 'A' && r.itemId in ['0a274be469cb','0f062599ce96','0f7c0c0c67df','170477f8e8a2','23de28ed34ce','2bab0ef65287','2d090b8415b2','3a45c59d5c04','3a6762750ff5','3f313f62d906','49d8d3b837b0','511b69428da8','56b1f356c1fa','5b7877f2cd16','6498ed1b52ca','67650f541148','7359bbc4c8d5','783327eaa9e1','841d2f7cc86f','889bba81b8f4','89ab8424a37c','9161c6b8c3c8','939169311cd8','99febecbc57d','a95b10b70cab','ae663cc10da0','b224200f6654','b9b1a76b3431','ba8fae227db5','c273729b24da','d194d6fb10a8','e03d2929210e','eb25cc2b6d9c','edae304e4a5e','fa09365bcd93','fbe559a85e3f'])
+        || (r.annotatorId == 'B' && r.itemId in ['044dbd99923f','0f062599ce96','0f7c0c0c67df','170477f8e8a2','239d6931c53f','2bab0ef65287','342a1da4bfa9','3537df55a37a','3b1b5c6a4cf4','4024db2e884f','442763eb1730','4fcc8e449bb1','59ddc4835744','5b7877f2cd16','65469024a170','67650f541148','7359bbc4c8d5','783327eaa9e1','858d3f779f43','88caa70cb208','8907af07b133','8d56d54c4e1f','93c72264f248','95b612ae5354','a0b959629ebf','ad74e78889a9','b224200f6654','b9b1a76b3431','ba8fae227db5','c273729b24da','d2215bda15c3','e29658e543a1','e993fc58277b','f140d3ddbb37','fa09365bcd93','fbe559a85e3f'])
+        || (r.annotatorId == 'C' && r.itemId in ['0a274be469cb','0a76ce04a17e','0f7c0c0c67df','2272615de675','239d6931c53f','2c440fd83ecb','342a1da4bfa9','3a45c59d5c04','3a6762750ff5','4024db2e884f','49d8d3b837b0','4fcc8e449bb1','59ddc4835744','63b0b46fa928','6498ed1b52ca','67650f541148','72b99c74444b','7d0e3be13fc4','858d3f779f43','889bba81b8f4','8907af07b133','9161c6b8c3c8','93c72264f248','99febecbc57d','a95b10b70cab','ad74e78889a9','b224200f6654','b4c167ee29ad','bebcccc1754f','c1ee0ea97040','d2215bda15c3','e03d2929210e','eb25cc2b6d9c','edae304e4a5e','f84a2dc7dae0','fb860852205b'])
+        || (r.annotatorId == 'D' && r.itemId in ['044dbd99923f','0a76ce04a17e','15abccbbfa57','2272615de675','23de28ed34ce','2bab0ef65287','2d090b8415b2','3a45c59d5c04','3b1b5c6a4cf4','4024db2e884f','49d8d3b837b0','511b69428da8','56b1f356c1fa','63b0b46fa928','65469024a170','6c85e51318a1','72b99c74444b','783327eaa9e1','858d3f779f43','88caa70cb208','8907af07b133','9161c6b8c3c8','939169311cd8','95b612ae5354','a0b959629ebf','ae663cc10da0','b42ca13ddf85','b4c167ee29ad','ba8fae227db5','c1ee0ea97040','d194d6fb10a8','e29658e543a1','e993fc58277b','edae304e4a5e','f84a2dc7dae0','fb860852205b'])
+        || (r.annotatorId == 'E' && r.itemId in ['044dbd99923f','0a76ce04a17e','15abccbbfa57','170477f8e8a2','239d6931c53f','2c440fd83ecb','2d090b8415b2','3537df55a37a','3a6762750ff5','3f313f62d906','442763eb1730','4fcc8e449bb1','56b1f356c1fa','5b7877f2cd16','6498ed1b52ca','6c85e51318a1','72b99c74444b','7d0e3be13fc4','841d2f7cc86f','88caa70cb208','89ab8424a37c','8d56d54c4e1f','939169311cd8','99febecbc57d','a0b959629ebf','ad74e78889a9','b42ca13ddf85','b4c167ee29ad','bebcccc1754f','c273729b24da','d2215bda15c3','e03d2929210e','e993fc58277b','f140d3ddbb37','f84a2dc7dae0','fbe559a85e3f'])
+        || (r.annotatorId == 'F' && r.itemId in ['0a274be469cb','0f062599ce96','15abccbbfa57','2272615de675','23de28ed34ce','2c440fd83ecb','342a1da4bfa9','3537df55a37a','3b1b5c6a4cf4','3f313f62d906','442763eb1730','511b69428da8','59ddc4835744','63b0b46fa928','65469024a170','6c85e51318a1','7359bbc4c8d5','7d0e3be13fc4','841d2f7cc86f','889bba81b8f4','89ab8424a37c','8d56d54c4e1f','93c72264f248','95b612ae5354','a95b10b70cab','ae663cc10da0','b42ca13ddf85','b9b1a76b3431','bebcccc1754f','c1ee0ea97040','d194d6fb10a8','e29658e543a1','eb25cc2b6d9c','f140d3ddbb37','fa09365bcd93','fb860852205b']));
+    }
+    match /claims/{annotatorId} {
+      allow read, delete: if false;
+      allow create: if request.auth != null
+        && annotatorId in ['A','B','C','D','E','F']
+        && request.resource.data.keys().hasOnly(['uid','annotatorId','claimedAt'])
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.annotatorId == annotatorId;
+      allow update: if request.auth != null
+        && resource.data.uid == request.auth.uid
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.annotatorId == resource.data.annotatorId;
+    }
+    match /responses/{responseId} {
+      allow read, delete: if false;
+      allow create: if request.auth != null
+        && request.resource.data.uid == request.auth.uid
+        && responseId == request.resource.data.annotatorId + "_" + request.resource.data.itemId
+        && request.auth.uid == get(/databases/$(database)/documents/claims/$(request.resource.data.annotatorId)).data.uid
+        && validResponse(request.resource.data);
+      allow update: if request.auth != null
+        && resource.data.uid == request.auth.uid
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.annotatorId == resource.data.annotatorId
+        && request.resource.data.itemId == resource.data.itemId
+        && request.auth.uid == get(/databases/$(database)/documents/claims/$(request.resource.data.annotatorId)).data.uid
+        && validResponse(request.resource.data);
+    }
+  }
+}
