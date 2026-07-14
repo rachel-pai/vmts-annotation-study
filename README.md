@@ -2,16 +2,16 @@
 
 Static GitHub Pages front end with Firebase Anonymous Authentication and Cloud
 Firestore. Everyone uses one study URL; Prolific supplies participant parameters,
-and the site transactionally assigns one of six balanced 15/16-item batches.
-Items with any source truncation are excluded: 31 complete items remain, with
-exactly three independent ratings per item.
+and the site transactionally assigns one of twelve balanced 18-item batches.
+The source experiment was regenerated with expanded schemas: all 72 items are
+complete, with exactly three independent ratings per item.
 
 ## What participants see
 
 1. Ethics approval, researcher contact, duration, payment, risks, data handling,
    withdrawal wording, and three explicit consent confirmations on the homepage.
 2. Prolific link validation and automatic stable batch assignment.
-3. A worked example, plain-language labels, and 15 or 16 annotation items.
+3. A worked example, plain-language labels, and 18 annotation items.
 4. A configured Prolific completion code and return button.
 
 Recruit participants who are comfortable reading software instructions and
@@ -40,7 +40,7 @@ python3 annotation-site/build_prolific_design.py
 ```
 
 This rebuilds `data/prolific-batches.json` and the matching rule allowlists. It
-fails unless all 31 non-truncated items receive exactly three ratings.
+fails unless all 72 complete items receive exactly three ratings.
 
 ## Prolific URL
 
@@ -51,7 +51,7 @@ https://YOUR_ACCOUNT.github.io/YOUR_REPOSITORY/?PROLIFIC_PID={{%PROLIFIC_PID%}}&
 ```
 
 Set the same completion code in Prolific and `study-config.js`. Recruit exactly
-6 completed participants for the current fixed design. Use Prolific replacement
+12 completed participants for the current fixed design. Use Prolific replacement
 recruitment for returned/timed-out submissions; a claimed but abandoned batch must
 be released administratively before a replacement can receive it.
 
