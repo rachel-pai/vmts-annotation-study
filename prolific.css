@@ -12,4 +12,9 @@
 .finish-actions a{text-decoration:none}
 .consent-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:18px}
 #declineReturnBtn{text-decoration:none;display:inline-block;margin-top:12px}
+.example-card{border-left:5px solid var(--green)}
+.example-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.example-grid>div{background:#f4f7f4;border-radius:10px;padding:14px}
+.example-grid p{margin:6px 0 0}
+@media(max-width:650px){.example-grid{grid-template-columns:1fr}}
 @media(max-width:850px){.ethics-card dl{grid-template-columns:1fr}.ethics-card>div:first-child{display:block}}

@@ -6,7 +6,7 @@
   <title>Versioned Memory Annotation Study</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="ux.css">
-  <link rel="stylesheet" href="prolific.css?v=4">
+  <link rel="stylesheet" href="prolific.css?v=5">
 </head>
 <body>
   <header class="topbar"><div class="brand">VMTS Human Validation</div><div id="saveState" class="save-state">Not connected</div></header>
@@ -15,7 +15,7 @@
       <div class="hero"><p class="eyebrow">Research annotation study</p><h1>How should an agent respond when persistent information changes?</h1>
       <p class="lede">You will compare an earlier instruction with its current version, then make four judgments and one confidence rating.</p></div>
       <div id="ethicsCard" class="card ethics-card" aria-live="polite" hidden><div><p class="eyebrow">Research governance</p><h2 id="ethicsStatus">Study review information</h2></div><dl><div><dt>Institution</dt><dd id="ethicsInstitution">—</dd></div><div><dt>Reference</dt><dd id="ethicsReference">—</dd></div><div><dt>Approved</dt><dd id="ethicsDate">—</dd></div><div><dt>Research contact</dt><dd id="ethicsContact">—</dd></div></dl><p id="ethicsNotice" class="link-note"></p></div>
-      <div class="card grid-two"><div><h2>What you will do</h2><ul><li>Review the label definitions before starting.</li><li>Annotate 18 study items.</li><li>Judge only the text shown—do not search externally.</li><li>Work independently and do not discuss answers.</li></ul></div>
+      <div class="card grid-two"><div><h2>What you will do</h2><ul><li>Compare an old software instruction with its new version.</li><li>Review 15 or 16 complete study items.</li><li>Judge only the text shown—do not search externally.</li><li>This study is for people comfortable reading software instructions and short code snippets.</li></ul></div>
       <div><h2>Time, payment, and privacy</h2><ul><li id="durationText">Estimated duration: see study information.</li><li id="paymentText">Payment: see the Prolific study listing.</li><li>Your Prolific URL identifiers are converted to one-way hashes before storage; we also store labels, confidence, notes, and timestamps.</li><li>Do not enter personal information in notes. You may stop at any time before submitting.</li></ul></div></div>
       <div class="card consent"><h2>Informed consent</h2><p>By choosing <b>I agree and participate</b>, I confirm that I am at least 18 years old, have read the study information above, voluntarily consent to take part, and understand that I may stop before submission without giving a reason.</p>
       <p id="participantStatus" class="link-note">Checking your Prolific study link…</p>
@@ -23,14 +23,11 @@
     </section>
 
     <section id="instructions" class="screen">
-      <p class="eyebrow">Instructions</p><h1>Use the current version as the reference</h1>
-      <div class="card"><h2>Four judgments + one confidence rating</h2><div class="definition-grid">
-        <div><b>Revision relation</b><span>How the current instruction changes the earlier one.</span></div>
-        <div><b>Candidate action</b><span>Whether the action follows the current or legacy instruction.</span></div>
-        <div><b>Saved write</b><span>What a future agent would inherit from the candidate saved text.</span></div>
-        <div><b>Preservation</b><span>Whether the still-valid clause remains intact.</span></div>
-      </div></div>
-      <div class="card callout"><b>Important:</b> The candidate action and candidate saved write are separate. An action may be correct while its saved write remains mixed or legacy.</div>
+      <p class="eyebrow">Instructions</p><h1>Compare the old rule with the new rule</h1>
+      <div class="card"><h2>Your task in plain language</h2><ol><li>Read the <b>earlier instruction</b> and the <b>current instruction</b>.</li><li>Decide how the rule changed.</li><li>Check whether the proposed action follows the new rule.</li><li>Separately check what the proposed saved note would teach a future agent.</li><li>Use <b>Cannot tell</b> whenever the visible text is insufficient.</li></ol><p class="link-note">You are comparing instructions, not judging whether the software itself is well designed.</p></div>
+      <div class="card example-card"><p class="eyebrow">Worked example</p><h2>A meeting changes time</h2><div class="example-grid"><div><b>Earlier instruction</b><p>Send the report every Monday at 09:00.</p></div><div><b>Current instruction</b><p>Send the report every Tuesday at 10:00.</p></div><div><b>Proposed action</b><p>Send it Tuesday at 10:00.</p></div><div><b>Proposed saved note</b><p>Remember: send it Monday at 09:00.</p></div></div><p><b>Correct reasoning:</b> the timing changed; the action follows the new rule; the saved note preserves the old rule; there is no other unchanged part to preserve.</p></div>
+      <div class="card"><h2>The four judgments</h2><div class="definition-grid"><div><b>1. Type of change</b><span>What happened between the old and new instructions?</span></div><div><b>2. Proposed action</b><span>Does it follow the new instruction, the old one, or a mixture?</span></div><div><b>3. Proposed saved note</b><span>What rule would a future agent learn?</span></div><div><b>4. Unchanged parts</b><span>Were requirements that remain valid kept correctly?</span></div></div></div>
+      <div class="card callout"><b>Important:</b> Judge the proposed action and proposed saved note separately. One can be correct while the other is wrong.</div>
       <button id="startBtn" class="primary">Start annotation</button>
     </section>
 
@@ -39,17 +36,17 @@
       <article class="task-layout">
         <div class="evidence-column">
           <div id="truncationWarning" class="truncation-warning" role="note" hidden></div>
-          <section class="change-summary"><h2>Change summary</h2><dl><dt class="kept">Still valid</dt><dd id="preserved"></dd><dt class="removed">Invalidated</dt><dd id="invalidated"></dd><dt class="added">New</dt><dd id="newClause"></dd></dl></section>
+          <section class="change-summary"><h2>What changed</h2><dl><dt class="kept">Unchanged requirement</dt><dd id="preserved"></dd><dt class="removed">Old requirement no longer valid</dt><dd id="invalidated"></dd><dt class="added">New requirement</dt><dd id="newClause"></dd></dl></section>
           <details class="full-version"><summary>Earlier instruction <span>Show full text</span></summary><p id="oldAction"></p></details>
           <details class="full-version"><summary>Current instruction <span>Show full text</span></summary><p id="currentAction"></p></details>
           <section class="candidate"><span>Candidate action</span><p id="candidateAction"></p></section>
           <section class="candidate"><span>Candidate saved write</span><p id="candidateWrite"></p></section>
         </div>
         <form id="annotationForm" class="question-column">
-          <fieldset><legend>1. How did the instruction change?</legend><div id="revisionOptions" class="options"></div></fieldset>
-          <fieldset><legend>2. Does the action follow the current instruction?</legend><div id="actionOptions" class="options"></div></fieldset>
-          <fieldset><legend>3. What would the saved write make a future agent believe?</legend><div id="writeOptions" class="options"></div></fieldset>
-          <fieldset><legend>4. Was the still-valid clause preserved?</legend><div id="preservationOptions" class="options"></div></fieldset>
+          <fieldset><legend>1. What happened to the old rule?</legend><div id="revisionOptions" class="options"></div></fieldset>
+          <fieldset><legend>2. Which rule does the proposed action follow?</legend><div id="actionOptions" class="options"></div></fieldset>
+          <fieldset><legend>3. What would the proposed saved note teach a future agent?</legend><div id="writeOptions" class="options"></div></fieldset>
+          <fieldset><legend>4. Were the unchanged requirements kept correctly?</legend><div id="preservationOptions" class="options"></div></fieldset>
           <fieldset><legend>5. How confident are you?</legend><div id="confidenceOptions" class="confidence"></div><div class="confidence-scale"><span>1 = Very uncertain</span><span>5 = Very confident</span></div></fieldset>
           <label class="field">Optional note<textarea id="notes" maxlength="500" placeholder="Explain uncertainty; do not include personal information."></textarea></label>
           <p id="formError" class="error" role="alert"></p>
@@ -62,5 +59,5 @@
     <section id="declined" class="screen"><div class="finish-card"><h1>You have left the study.</h1><p>You did not consent to participate. No annotation response has been submitted. You may close this page or return to Prolific.</p><a id="declineReturnBtn" class="primary" href="https://app.prolific.com/">Return to Prolific</a></div></section>
   </main>
   <footer>Pseudonymous research annotation · No model or policy identity is shown</footer>
-  <script type="module" src="app.js?v=4"></script>
+  <script type="module" src="app.js?v=5"></script>
 </body></html>

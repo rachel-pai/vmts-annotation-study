@@ -1,21 +1,27 @@
 #!/usr/bin/env python3
-"""Build 12 Prolific batches and matching Firestore item allowlists."""
+"""Build balanced human-readable batches and matching Firestore allowlists."""
 from collections import Counter
 import json
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-assignments = json.loads((ROOT / "data/assignments.json").read_text())
-batches = {}
-for annotator, items in assignments.items():
-    if len(items) != 36:
-        raise ValueError(f"{annotator} has {len(items)} items, expected 36")
-    batches[f"{annotator}1"] = items[:18]
-    batches[f"{annotator}2"] = items[18:]
+tasks = json.loads((ROOT / "data/tasks.json").read_text())
+eligible = sorted(t["item_id"] for t in tasks if not t.get("truncated_fields"))
+if len(eligible) != 31:
+    raise ValueError(f"Expected 31 complete items, found {len(eligible)}")
+
+# Six balanced batches. Each complete item goes to three distinct batches.
+batches = {f"P{i}": [] for i in range(1, 7)}
+batch_ids = list(batches)
+for i, item in enumerate(eligible):
+    for offset in (0, 2, 4):
+        batches[batch_ids[(i + offset) % len(batch_ids)]].append(item)
 
 counts = Counter(item for items in batches.values() for item in items)
-if len(counts) != 72 or set(counts.values()) != {3}:
-    raise ValueError("Design must contain 72 items with exactly 3 ratings each")
+if len(counts) != 31 or set(counts.values()) != {3}:
+    raise ValueError("Design must contain 31 complete items with exactly 3 ratings each")
+if max(map(len, batches.values())) - min(map(len, batches.values())) > 1:
+    raise ValueError("Batch sizes are not balanced")
 
 (ROOT / "data/prolific-batches.json").write_text(
     json.dumps(batches, indent=2) + "\n"
@@ -70,7 +76,7 @@ service cloud.firestore {{
         && getAfter(/databases/$(database)/documents/batchClaims/$(request.resource.data.batchId)).data.participantKey == participantKey;
       allow update: if request.auth != null && resource.data.uid == request.auth.uid
         && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['completedAt','completedItems'])
-        && request.resource.data.completedItems is int && request.resource.data.completedItems >= 0 && request.resource.data.completedItems <= 18;
+        && request.resource.data.completedItems is int && request.resource.data.completedItems >= 0 && request.resource.data.completedItems <= 16;
     }}
     match /responses/{{responseId}} {{
       allow read, delete: if false;
