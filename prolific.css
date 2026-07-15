@@ -13,6 +13,9 @@
 .consent-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:18px}
 #declineReturnBtn{text-decoration:none;display:inline-block;margin-top:12px}
 .example-card{border-left:5px solid var(--green)}
+.scenario-card{background:#fff;border:1px solid var(--line);border-left:5px solid var(--green);border-radius:14px;padding:20px}
+.scenario-card h2{font:700 22px Georgia,serif;margin:5px 0 10px}
+.scenario-card p{white-space:pre-wrap;overflow-wrap:anywhere}
 .example-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .example-grid>div{background:#f4f7f4;border-radius:10px;padding:14px}
 .example-grid p{margin:6px 0 0}

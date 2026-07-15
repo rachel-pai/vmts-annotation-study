@@ -6,7 +6,7 @@
   <title>Versioned Memory Annotation Study</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="ux.css">
-  <link rel="stylesheet" href="prolific.css?v=5">
+  <link rel="stylesheet" href="prolific.css?v=6">
 </head>
 <body>
   <header class="topbar"><div class="brand">VMTS Human Validation</div><div id="saveState" class="save-state">Not connected</div></header>
@@ -36,11 +36,12 @@
       <article class="task-layout">
         <div class="evidence-column">
           <div id="truncationWarning" class="truncation-warning" role="note" hidden></div>
-          <section class="change-summary"><h2>What changed</h2><dl><dt class="kept">Unchanged requirement</dt><dd id="preserved"></dd><dt class="removed">Old requirement no longer valid</dt><dd id="invalidated"></dd><dt class="added">New requirement</dt><dd id="newClause"></dd></dl></section>
+          <section class="scenario-card"><p class="eyebrow">Scenario</p><h2 id="scenarioTitle"></h2><p id="situation"></p><p id="readerNote" class="link-note"></p></section>
+          <section class="change-summary"><h2>Compare the requirements</h2><dl><dt class="removed">Earlier requirement</dt><dd id="invalidated"></dd><dt class="added">Current requirement</dt><dd id="newClause"></dd><dt class="kept">Requirement that did not change</dt><dd id="preserved"></dd></dl></section>
           <details class="full-version"><summary>Earlier instruction <span>Show full text</span></summary><p id="oldAction"></p></details>
           <details class="full-version"><summary>Current instruction <span>Show full text</span></summary><p id="currentAction"></p></details>
-          <section class="candidate"><span>Candidate action</span><p id="candidateAction"></p></section>
-          <section class="candidate"><span>Candidate saved write</span><p id="candidateWrite"></p></section>
+          <section class="candidate"><span>Proposed action</span><p id="candidateAction"></p></section>
+          <section class="candidate"><span>Proposed saved note</span><p id="candidateWrite"></p></section>
         </div>
         <form id="annotationForm" class="question-column">
           <fieldset><legend>1. What happened to the old rule?</legend><div id="revisionOptions" class="options"></div></fieldset>
@@ -59,5 +60,5 @@
     <section id="declined" class="screen"><div class="finish-card"><h1>You have left the study.</h1><p>You did not consent to participate. No annotation response has been submitted. You may close this page or return to Prolific.</p><a id="declineReturnBtn" class="primary" href="https://app.prolific.com/">Return to Prolific</a></div></section>
   </main>
   <footer>Pseudonymous research annotation · No model or policy identity is shown</footer>
-  <script type="module" src="app.js?v=5"></script>
+  <script type="module" src="app.js?v=6"></script>
 </body></html>
