@@ -1,0 +1,2 @@
+.consent-check{display:flex;align-items:flex-start;gap:10px;margin:14px 0;max-width:100%;font-size:16px;line-height:1.5;color:var(--ink)}
+.consent-check input{flex:0 0 auto;width:16px;height:16px;margin:4px 0 0}
