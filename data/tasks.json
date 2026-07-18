@@ -4,575 +4,575 @@
     "topic": "Telemetry consent",
     "before": "The policy first explained who controlled personal data, then discussed telemetry consent.",
     "now": "The policy now starts with telemetry consent and permitted uses. The earlier data-controller explanation is removed.",
-    "action": "The policy now starts with telemetry consent and permitted uses. The earlier data-controller explanation is removed.",
-    "saved_note": "The policy now starts with telemetry consent and permitted uses. The earlier data-controller explanation is removed."
+    "action": "The assistant opened the section with telemetry consent and removed the old explanation of who controls the data.",
+    "saved_note": "Telemetry consent comes first; the former data-controller introduction is no longer part of this section."
   },
   {
     "item_id": "0a274be469cb",
     "topic": "Calendar update options",
     "before": "Deleting a calendar used one automatic fallback. Recurring updates had only the earlier options.",
     "now": "Users can now choose delete, wipe, or automatic mode. Recurring updates also gain a third option for cases where the original event is missing.",
-    "action": "No change was made; the assistant asked for confirmation.",
-    "saved_note": "No note was saved."
+    "action": "The assistant offered all three deletion modes and the new missing-original option for recurring updates.",
+    "saved_note": "Calendar deletion has delete, wipe, and automatic modes; recurring updates include the missing-original option."
   },
   {
     "item_id": "0a76ce04a17e",
     "topic": "Private-information request",
     "before": "Requests used the older GitHub contact-form address.",
     "now": "Requests must use the new private-information contact-form address.",
-    "action": "Requests must use the new private-information contact-form address.",
-    "saved_note": "Requests must use the new private-information contact-form address."
+    "action": "The assistant directed the request to the replacement private-information contact form.",
+    "saved_note": "Private-information requests go through the replacement contact-form address."
   },
   {
     "item_id": "0f062599ce96",
     "topic": "Changelog format",
     "before": "The instructions listed several specific extra sections that were allowed.",
     "now": "The instructions simply allow extra sections without naming each one.",
-    "action": "No change was made; the assistant asked for confirmation.",
-    "saved_note": "The instructions listed several specific extra sections that were allowed."
+    "action": "The assistant accepted an extra changelog section without requiring it to appear on a named list.",
+    "saved_note": "Additional changelog sections are allowed; they do not need to match a pre-enumerated list."
   },
   {
     "item_id": "0f7c0c0c67df",
     "topic": "Educational-use wording",
     "before": "A sentence said GitHub “is willing allow” access.",
     "now": "The grammar is corrected to “is willing to allow” access.",
-    "action": "No change was made; the assistant asked for confirmation.",
-    "saved_note": "No note was saved."
+    "action": "The assistant corrected the sentence by inserting “to” before “allow.”",
+    "saved_note": "Use the grammatical wording “is willing to allow.”"
   },
   {
     "item_id": "15abccbbfa57",
     "topic": "Login link formatting",
     "before": "The login link had one extra closing marker, so the link was malformed.",
     "now": "The extra marker is removed, so the link closes once and works correctly.",
-    "action": "The extra marker is removed, so the link closes once and works correctly.",
-    "saved_note": "The extra marker is removed, so the link closes once and works correctly."
+    "action": "The assistant removed the duplicate closing marker so the login link had one valid ending.",
+    "saved_note": "The login link closes once, with the extra marker removed."
   },
   {
     "item_id": "170477f8e8a2",
     "topic": "Calendar update options",
     "before": "Deleting a calendar used one automatic fallback. Recurring updates had only the earlier options.",
     "now": "Users can now choose delete, wipe, or automatic mode. Recurring updates also gain a third option for cases where the original event is missing.",
-    "action": "Users can now choose delete, wipe, or automatic mode. Recurring updates also gain a third option for cases where the original event is missing.",
-    "saved_note": "Users can now choose delete, wipe, or automatic mode. Recurring updates also gain a third option for cases where the original event is missing."
+    "action": "The assistant used only the former automatic deletion fallback and offered no missing-original option.",
+    "saved_note": "Calendar deletion still uses the automatic fallback, and recurring updates retain only the earlier choices."
   },
   {
     "item_id": "2272615de675",
     "topic": "DMCA transparency link",
     "before": "The text named section D, but the link opened section E.",
     "now": "Both the text and the link must point to section D.",
-    "action": "Both the text and the link must point to section D.",
-    "saved_note": "Both the text and the link must point to section D."
+    "action": "The assistant changed the destination so both the label and link refer to transparency section D.",
+    "saved_note": "The displayed section and its destination must both be section D."
   },
   {
     "item_id": "239d6931c53f",
     "topic": "Required request fields",
     "before": "Two settings could be left out or set to “none.”",
     "now": "Both settings must now be included, although either may still be set to “none.”",
-    "action": "Both settings must now be included, although either may still be set to “none.”",
-    "saved_note": "Both settings must now be included, although either may still be set to “none.”"
+    "action": "The assistant included both settings and explicitly set one of them to “none.”",
+    "saved_note": "Both settings must appear in every request; “none” remains an allowed value."
   },
   {
     "item_id": "23de28ed34ce",
     "topic": "Shared test setup",
     "before": "The helper was attached to each individual test object.",
     "now": "The helper must belong to the test class so all tests use the shared server correctly.",
-    "action": "The helper must belong to the test class so all tests use the shared server correctly.",
-    "saved_note": "The helper must belong to the test class so all tests use the shared server correctly."
+    "action": "The assistant moved the helper onto the test class so every test shares the same server.",
+    "saved_note": "Attach the helper to the test class, not to individual test instances."
   },
   {
     "item_id": "2bab0ef65287",
     "topic": "Safe test shutdown",
     "before": "Cleanup tried to stop the background loop from inside the cleanup task, which could interrupt completion.",
     "now": "Cleanup should finish first. The background loop should then be stopped separately and safely.",
-    "action": "Cleanup should finish first. The background loop should then be stopped separately and safely.",
-    "saved_note": "Cleanup should finish first. The background loop should then be stopped separately and safely."
+    "action": "The assistant let cleanup complete, then stopped the background loop in a separate safe step.",
+    "saved_note": "Finish cleanup before stopping the background loop separately."
   },
   {
     "item_id": "2c440fd83ecb",
     "topic": "Safe test shutdown",
     "before": "Cleanup tried to stop the background loop from inside the cleanup task, which could interrupt completion.",
     "now": "Cleanup should finish first. The background loop should then be stopped separately and safely.",
-    "action": "Cleanup tried to stop the background loop from inside the cleanup task, which could interrupt completion.",
-    "saved_note": "Cleanup tried to stop the background loop from inside the cleanup task, which could interrupt completion."
+    "action": "The assistant stopped the loop from inside cleanup before cleanup could finish.",
+    "saved_note": "Cleanup should stop its own background loop before it returns."
   },
   {
     "item_id": "2d090b8415b2",
     "topic": "Pull-request target branch",
     "before": "The target branch must exist in the same repository.",
     "now": "There is no change to this rule.",
-    "action": "The target branch must exist in the same repository.",
-    "saved_note": "The target branch must exist in the same repository."
+    "action": "The assistant accepted the pull request only after confirming that its target branch exists in the same repository.",
+    "saved_note": "A pull-request target branch must exist in the same repository."
   },
   {
     "item_id": "342a1da4bfa9",
     "topic": "Optional settings file",
     "before": "Only a missing-file error was treated as “no settings file.”",
     "now": "Any file-access error should be treated as “no settings file,” so the program continues.",
-    "action": "Any file-access error should be treated as “no settings file,” so the program continues.",
-    "saved_note": "Any file-access error should be treated as “no settings file,” so the program continues."
+    "action": "The assistant treated a permission error as if no optional settings file were available and continued.",
+    "saved_note": "Any file-access failure means the optional settings file is unavailable, so execution continues."
   },
   {
     "item_id": "3537df55a37a",
     "topic": "Changelog wording",
     "before": "The note said that “some more bugs” were found.",
     "now": "The note changes this phrase to “some few more bugs.”",
-    "action": "The note changes this phrase to “some few more bugs.”",
-    "saved_note": "The note changes this phrase to “some few more bugs.”"
+    "action": "The assistant replaced the release-note phrase with “some few more bugs.”",
+    "saved_note": "The release note uses the phrase “some few more bugs.”"
   },
   {
     "item_id": "3a45c59d5c04",
     "topic": "Repository status notice",
     "before": "The README ended with an unfinished sentence after the closure notice.",
     "now": "Replace the unfinished ending with a complete explanation that the repository is no longer open to public contributions.",
-    "action": "Replace the unfinished ending with a complete explanation that the repository is no longer open to public contributions.",
-    "saved_note": "No note was saved."
+    "action": "The assistant replaced the cut-off ending with a complete statement that public contributions are closed.",
+    "saved_note": "End the README with a complete explanation that the repository no longer accepts public contributions."
   },
   {
     "item_id": "3a6762750ff5",
     "topic": "Repository closure details",
     "before": "The README had a closure notice but ended before giving all next steps.",
     "now": "Add the full closure explanation, archive location, support contact, and remaining development instructions.",
-    "action": "Add the full closure explanation, archive location, support contact, and remaining development instructions.",
-    "saved_note": "Add the full closure explanation, archive location, support contact, and remaining development instructions."
+    "action": "The assistant added the closure reason, archive location, support contact, and remaining development guidance.",
+    "saved_note": "The closure notice includes the explanation, archive, support contact, and development instructions."
   },
   {
     "item_id": "3b1b5c6a4cf4",
     "topic": "Changelog wording",
     "before": "The note said that “some more bugs” were found.",
     "now": "The note changes this phrase to “some few more bugs.”",
-    "action": "The note changes this phrase to “some few more bugs.”",
-    "saved_note": "The note changes this phrase to “some few more bugs.”"
+    "action": "The assistant published the earlier phrase “some more bugs.”",
+    "saved_note": "The release note should continue to say “some more bugs.”"
   },
   {
     "item_id": "3f313f62d906",
     "topic": "Changelog format",
     "before": "The instructions listed several specific extra sections that were allowed.",
     "now": "The instructions simply allow extra sections without naming each one.",
-    "action": "The instructions simply allow extra sections without naming each one.",
-    "saved_note": "No note was saved."
+    "action": "The assistant rejected an extra section because it was not one of the specifically listed sections.",
+    "saved_note": "Only the specifically named extra changelog sections are permitted."
   },
   {
     "item_id": "4024db2e884f",
     "topic": "Marketplace payment reference",
     "before": "The policy referred to payment terms in Section K.",
     "now": "The policy must now refer to payment terms in Section L.",
-    "action": "The policy must now refer to payment terms in Section L.",
-    "saved_note": "The policy must now refer to payment terms in Section L."
+    "action": "The assistant updated the payment citation from Section K to Section L.",
+    "saved_note": "Payment terms now cite Section L."
   },
   {
     "item_id": "442763eb1730",
     "topic": "DMCA publication link",
     "before": "The instructions linked to transparency section D.",
     "now": "The instructions now link to transparency section E.",
-    "action": "The instructions now link to transparency section E.",
-    "saved_note": "The instructions now link to transparency section E."
+    "action": "The assistant changed the transparency destination from section D to section E.",
+    "saved_note": "The publication instructions now link to transparency section E."
   },
   {
     "item_id": "49d8d3b837b0",
     "topic": "DMCA transparency link",
     "before": "The text named section D, but the link opened section E.",
     "now": "Both the text and the link must point to section D.",
-    "action": "Both the text and the link must point to section D.",
-    "saved_note": "Both the text and the link must point to section D."
+    "action": "The assistant kept a section-D label that still opened section E.",
+    "saved_note": "Display section D while linking readers to section E."
   },
   {
     "item_id": "4fcc8e449bb1",
     "topic": "Pull-request target branch",
     "before": "The target branch must exist in the same repository.",
     "now": "There is no change to this rule.",
-    "action": "The target branch must exist in the same repository.",
-    "saved_note": "The target branch must exist in the same repository."
+    "action": "The assistant accepted a target branch that exists only in a different repository.",
+    "saved_note": "A target branch may be taken from any accessible repository."
   },
   {
     "item_id": "511b69428da8",
     "topic": "Required request fields",
     "before": "Two settings could be left out or set to “none.”",
     "now": "Both settings must now be included, although either may still be set to “none.”",
-    "action": "Both settings must now be included, although either may still be set to “none.”",
-    "saved_note": "Both settings must now be included, although either may still be set to “none.”"
+    "action": "The assistant omitted one setting because its intended value was “none.”",
+    "saved_note": "A setting may be omitted whenever its value would be “none.”"
   },
   {
     "item_id": "56b1f356c1fa",
     "topic": "Changelog wording",
     "before": "The note said that “some more bugs” were found.",
     "now": "The note changes this phrase to “some few more bugs.”",
-    "action": "The note changes this phrase to “some few more bugs.”",
-    "saved_note": "The note changes this phrase to “some few more bugs.”"
+    "action": "The assistant changed the summary to “some few more bugs” but retained “some more bugs” later in the same note.",
+    "saved_note": "Use “some few more bugs” in the summary and “some more bugs” in the details."
   },
   {
     "item_id": "59ddc4835744",
     "topic": "Marketplace payment reference",
     "before": "The policy referred to payment terms in Section K.",
     "now": "The policy must now refer to payment terms in Section L.",
-    "action": "The policy must now refer to payment terms in Section L.",
-    "saved_note": "The policy must now refer to payment terms in Section L."
+    "action": "The assistant continued citing payment terms in Section K.",
+    "saved_note": "Payment terms are governed by Section K."
   },
   {
     "item_id": "5b7877f2cd16",
     "topic": "Test account names",
     "before": "Test accounts used email-like names and a longer default password.",
     "now": "Test accounts now use short names without domains and a shorter default password.",
-    "action": "Test accounts now use short names without domains and a shorter default password.",
-    "saved_note": "Test accounts now use short names without domains and a shorter default password."
+    "action": "The assistant created short account names without domains and used the new shorter default password.",
+    "saved_note": "Test accounts use short non-domain names and the shorter default password."
   },
   {
     "item_id": "63b0b46fa928",
     "topic": "Recurring-event completion",
     "before": "The system could not safely complete recurring events in background mode.",
     "now": "The system must support this safely and wait for each save operation to finish.",
-    "action": "No change was made; the assistant asked for confirmation.",
-    "saved_note": "The system could not safely complete recurring events in background mode."
+    "action": "The assistant completed the recurring event in background mode and waited for every save to finish.",
+    "saved_note": "Background completion of recurring events is supported, and each save must be awaited."
   },
   {
     "item_id": "6498ed1b52ca",
     "topic": "Pull-request information",
     "before": "Only the open-or-closed status rule was documented.",
     "now": "The status rule stays the same. Some versions also document the target branch, which must exist in the same repository.",
-    "action": "The status rule stays the same. Some versions also document the target branch, which must exist in the same repository.",
-    "saved_note": "The status rule stays the same. Some versions also document the target branch, which must exist in the same repository."
+    "action": "The assistant preserved the status rule and documented that the target branch must exist in the same repository.",
+    "saved_note": "Keep the status rule; when documented, the target branch must belong to the same repository."
   },
   {
     "item_id": "65469024a170",
     "topic": "Recurring-event completion",
     "before": "The system could not safely complete recurring events in background mode.",
     "now": "The system must support this safely and wait for each save operation to finish.",
-    "action": "The system must support this safely and wait for each save operation to finish.",
-    "saved_note": "The system must support this safely and wait for each save operation to finish."
+    "action": "The assistant avoided background completion because recurring events were still considered unsafe there.",
+    "saved_note": "Recurring events cannot be completed safely in background mode."
   },
   {
     "item_id": "67650f541148",
     "topic": "Microsoft licensing terms",
     "before": "The extra terms applied only when the Microsoft agreement did not already contain them.",
     "now": "The extra terms apply for the whole time the pre-release software is used, even if the Microsoft agreement already contains them.",
-    "action": "The extra terms apply for the whole time the pre-release software is used, even if the Microsoft agreement already contains them.",
-    "saved_note": "The extra terms apply for the whole time the pre-release software is used, even if the Microsoft agreement already contains them."
+    "action": "The assistant applied the extra terms throughout use of the pre-release software, regardless of the Microsoft agreement.",
+    "saved_note": "The extra terms apply for the full period of use even when the Microsoft agreement already includes them."
   },
   {
     "item_id": "6c85e51318a1",
     "topic": "AI training restriction",
     "before": "GitHub would not train AI models on user inputs or outputs without written instruction.",
     "now": "The restriction is now stated specifically for Copilot Business and Enterprise. GitHub is also identified as controller of related personal data.",
-    "action": "The restriction is now stated specifically for Copilot Business and Enterprise. GitHub is also identified as controller of related personal data.",
-    "saved_note": "The restriction is now stated specifically for Copilot Business and Enterprise. GitHub is also identified as controller of related personal data."
+    "action": "The assistant limited the no-training promise to Copilot Business and Enterprise and identified GitHub as data controller.",
+    "saved_note": "For Copilot Business and Enterprise, GitHub will not train on inputs or outputs without written instruction and is the related data controller."
   },
   {
     "item_id": "72b99c74444b",
     "topic": "AI training restriction",
     "before": "GitHub would not train AI models on user inputs or outputs without written instruction.",
     "now": "The restriction is now stated specifically for Copilot Business and Enterprise. GitHub is also identified as controller of related personal data.",
-    "action": "The restriction is now stated specifically for Copilot Business and Enterprise. GitHub is also identified as controller of related personal data.",
-    "saved_note": "The restriction is now stated specifically for Copilot Business and Enterprise. GitHub is also identified as controller of related personal data."
+    "action": "The assistant stated the former unrestricted no-training promise and did not identify GitHub as data controller.",
+    "saved_note": "GitHub will not train on any user inputs or outputs without written instruction; no product scope or controller statement is needed."
   },
   {
     "item_id": "7359bbc4c8d5",
     "topic": "Pull-request information",
     "before": "Only the open-or-closed status rule was documented.",
     "now": "The status rule stays the same. Some versions also document the target branch, which must exist in the same repository.",
-    "action": "No change was made; the assistant asked for confirmation.",
-    "saved_note": "No note was saved."
+    "action": "The assistant documented only the former open-or-closed status rule and omitted the target-branch requirement.",
+    "saved_note": "Only the open-or-closed status rule needs to be documented."
   },
   {
     "item_id": "783327eaa9e1",
     "topic": "User account list",
     "before": "The list included users in signup order.",
     "now": "The list must still use signup order and must include both personal and organization accounts.",
-    "action": "The list must still use signup order and must include both personal and organization accounts.",
-    "saved_note": "The list must still use signup order and must include both personal and organization accounts."
+    "action": "The assistant returned personal and organization accounts together in signup order.",
+    "saved_note": "List both account types and preserve signup order."
   },
   {
     "item_id": "7d0e3be13fc4",
     "topic": "AI training restriction",
     "before": "GitHub would not train AI models on user inputs or outputs without written instruction.",
     "now": "The restriction is now stated specifically for Copilot Business and Enterprise. GitHub is also identified as controller of related personal data.",
-    "action": "The restriction is now stated specifically for Copilot Business and Enterprise. GitHub is also identified as controller of related personal data.",
-    "saved_note": "The restriction is now stated specifically for Copilot Business and Enterprise. GitHub is also identified as controller of related personal data."
+    "action": "The assistant used the Copilot Business and Enterprise scope but omitted GitHub’s data-controller role.",
+    "saved_note": "The no-training restriction is scoped to Copilot Business and Enterprise, but the controller is not identified."
   },
   {
     "item_id": "841d2f7cc86f",
     "topic": "Safe test shutdown",
     "before": "Cleanup tried to stop the background loop from inside the cleanup task, which could interrupt completion.",
     "now": "Cleanup should finish first. The background loop should then be stopped separately and safely.",
-    "action": "Cleanup should finish first. The background loop should then be stopped separately and safely.",
-    "saved_note": "Cleanup should finish first. The background loop should then be stopped separately and safely."
+    "action": "The assistant waited for part of cleanup, then stopped the loop while the final cleanup step was still running.",
+    "saved_note": "Begin stopping the loop after cleanup starts, even if its final operation has not completed."
   },
   {
     "item_id": "858d3f779f43",
     "topic": "Private-information request",
     "before": "Requests used the older GitHub contact-form address.",
     "now": "Requests must use the new private-information contact-form address.",
-    "action": "Requests must use the new private-information contact-form address.",
-    "saved_note": "Requests must use the new private-information contact-form address."
+    "action": "The assistant sent the request through the former GitHub contact-form address.",
+    "saved_note": "Private-information requests should use the former GitHub contact form."
   },
   {
     "item_id": "889bba81b8f4",
     "topic": "Optional settings file",
     "before": "Only a missing-file error was treated as “no settings file.”",
     "now": "Any file-access error should be treated as “no settings file,” so the program continues.",
-    "action": "Any file-access error should be treated as “no settings file,” so the program continues.",
-    "saved_note": "Any file-access error should be treated as “no settings file,” so the program continues."
+    "action": "The assistant continued only for a missing file and stopped when the file produced a permission error.",
+    "saved_note": "Only a missing-file error counts as no settings file; other access errors stop execution."
   },
   {
     "item_id": "88caa70cb208",
     "topic": "Test account names",
     "before": "Test accounts used email-like names and a longer default password.",
     "now": "Test accounts now use short names without domains and a shorter default password.",
-    "action": "Test accounts now use short names without domains and a shorter default password.",
-    "saved_note": "Test accounts now use short names without domains and a shorter default password."
+    "action": "The assistant kept email-style account names and the former longer default password.",
+    "saved_note": "Test accounts retain email-like names and the longer default password."
   },
   {
     "item_id": "8907af07b133",
     "topic": "Contribution instructions",
     "before": "The README used an outdated help link for creating a pull request.",
     "now": "The README must use the newer help link.",
-    "action": "The README must use the newer help link.",
-    "saved_note": "The README must use the newer help link."
+    "action": "The assistant replaced the obsolete pull-request help link with the newer destination.",
+    "saved_note": "The README points to the newer help page for creating a pull request."
   },
   {
     "item_id": "89ab8424a37c",
     "topic": "Test account names",
     "before": "Test accounts used email-like names and a longer default password.",
     "now": "Test accounts now use short names without domains and a shorter default password.",
-    "action": "Test accounts now use short names without domains and a shorter default password.",
-    "saved_note": "Test accounts now use short names without domains and a shorter default password."
+    "action": "The assistant shortened the account names but continued assigning the old longer password.",
+    "saved_note": "Use short names without domains, together with the former longer password."
   },
   {
     "item_id": "8d56d54c4e1f",
     "topic": "DMCA publication link",
     "before": "The instructions linked to transparency section D.",
     "now": "The instructions now link to transparency section E.",
-    "action": "The instructions now link to transparency section E.",
-    "saved_note": "The instructions now link to transparency section E."
+    "action": "The assistant retained the former link to transparency section D.",
+    "saved_note": "The publication instructions continue to link to transparency section D."
   },
   {
     "item_id": "9161c6b8c3c8",
     "topic": "Login link formatting",
     "before": "The login link had one extra closing marker, so the link was malformed.",
     "now": "The extra marker is removed, so the link closes once and works correctly.",
-    "action": "The extra marker is removed, so the link closes once and works correctly.",
-    "saved_note": "No note was saved."
+    "action": "The assistant kept both closing markers, leaving the login link malformed.",
+    "saved_note": "The login link should retain its two closing markers."
   },
   {
     "item_id": "939169311cd8",
     "topic": "Pull-request information",
     "before": "Only the open-or-closed status rule was documented.",
     "now": "The status rule stays the same. Some versions also document the target branch, which must exist in the same repository.",
-    "action": "No change was made; the assistant asked for confirmation.",
-    "saved_note": "Only the open-or-closed status rule was documented."
+    "action": "The assistant kept the status rule and mentioned a target branch, but allowed that branch to exist in another repository.",
+    "saved_note": "Keep the status rule and document a target branch that may come from a different repository."
   },
   {
     "item_id": "93c72264f248",
     "topic": "Shared test setup",
     "before": "The helper was attached to each individual test object.",
     "now": "The helper must belong to the test class so all tests use the shared server correctly.",
-    "action": "The helper must belong to the test class so all tests use the shared server correctly.",
-    "saved_note": "The helper must belong to the test class so all tests use the shared server correctly."
+    "action": "The assistant continued attaching a separate helper to each test object.",
+    "saved_note": "Each test object should keep its own helper and server connection."
   },
   {
     "item_id": "95b612ae5354",
     "topic": "Calendar update options",
     "before": "Deleting a calendar used one automatic fallback. Recurring updates had only the earlier options.",
     "now": "Users can now choose delete, wipe, or automatic mode. Recurring updates also gain a third option for cases where the original event is missing.",
-    "action": "No change was made; the assistant asked for confirmation.",
-    "saved_note": "No note was saved."
+    "action": "The assistant added the three deletion modes but left recurring updates with only the old options.",
+    "saved_note": "Use delete, wipe, or automatic mode; recurring updates still have only the two former options."
   },
   {
     "item_id": "99febecbc57d",
     "topic": "Required request fields",
     "before": "Two settings could be left out or set to “none.”",
     "now": "Both settings must now be included, although either may still be set to “none.”",
-    "action": "Both settings must now be included, although either may still be set to “none.”",
-    "saved_note": "Both settings must now be included, although either may still be set to “none.”"
+    "action": "The assistant included the first setting but omitted the second when its value was “none.”",
+    "saved_note": "The first setting is required, but the second may be omitted when set to “none.”"
   },
   {
     "item_id": "a0b959629ebf",
     "topic": "Shared test setup",
     "before": "The helper was attached to each individual test object.",
     "now": "The helper must belong to the test class so all tests use the shared server correctly.",
-    "action": "The helper must belong to the test class so all tests use the shared server correctly.",
-    "saved_note": "The helper must belong to the test class so all tests use the shared server correctly."
+    "action": "The assistant added a class-level helper but left individual helpers active for some tests.",
+    "saved_note": "Most tests use the class helper, while selected tests retain instance-level helpers."
   },
   {
     "item_id": "a95b10b70cab",
     "topic": "Repository status notice",
     "before": "The README ended with an unfinished sentence after the closure notice.",
     "now": "Replace the unfinished ending with a complete explanation that the repository is no longer open to public contributions.",
-    "action": "No change was made; the assistant asked for confirmation.",
-    "saved_note": "No note was saved."
+    "action": "The assistant left the closure notice ending midway through its final sentence.",
+    "saved_note": "The README may end with the unfinished sentence after the closure notice."
   },
   {
     "item_id": "ad74e78889a9",
     "topic": "User account list",
     "before": "The list included users in signup order.",
     "now": "The list must still use signup order and must include both personal and organization accounts.",
-    "action": "The list included users in signup order.",
-    "saved_note": "The list included users in signup order."
+    "action": "The assistant kept signup order but returned only personal accounts.",
+    "saved_note": "The signup-ordered list includes personal accounts only."
   },
   {
     "item_id": "ae663cc10da0",
     "topic": "Microsoft licensing terms",
     "before": "The extra terms applied only when the Microsoft agreement did not already contain them.",
     "now": "The extra terms apply for the whole time the pre-release software is used, even if the Microsoft agreement already contains them.",
-    "action": "The extra terms apply for the whole time the pre-release software is used, even if the Microsoft agreement already contains them.",
-    "saved_note": "The extra terms apply for the whole time the pre-release software is used, even if the Microsoft agreement already contains them."
+    "action": "The assistant applied the extra terms only when they were absent from the Microsoft agreement.",
+    "saved_note": "The extra terms apply only if the Microsoft agreement does not already contain them."
   },
   {
     "item_id": "b224200f6654",
     "topic": "Optional settings file",
     "before": "Only a missing-file error was treated as “no settings file.”",
     "now": "Any file-access error should be treated as “no settings file,” so the program continues.",
-    "action": "Any file-access error should be treated as “no settings file,” so the program continues.",
-    "saved_note": "Any file-access error should be treated as “no settings file,” so the program continues."
+    "action": "The assistant ignored missing-file and permission errors but still stopped on another file-access error.",
+    "saved_note": "Missing-file and permission errors mean no settings file, while other access errors remain fatal."
   },
   {
     "item_id": "b42ca13ddf85",
     "topic": "Repository closure details",
     "before": "The README had a closure notice but ended before giving all next steps.",
     "now": "Add the full closure explanation, archive location, support contact, and remaining development instructions.",
-    "action": "Add the full closure explanation, archive location, support contact, and remaining development instructions.",
-    "saved_note": "Add the full closure explanation, archive location, support contact, and remaining development instructions."
+    "action": "The assistant kept only the short closure notice and supplied none of the required next-step details.",
+    "saved_note": "A short closure notice is sufficient without archive, support, or development details."
   },
   {
     "item_id": "b4c167ee29ad",
     "topic": "User account list",
     "before": "The list included users in signup order.",
     "now": "The list must still use signup order and must include both personal and organization accounts.",
-    "action": "The list must still use signup order and must include both personal and organization accounts.",
-    "saved_note": "No note was saved."
+    "action": "The assistant included both account types but placed all organizations after the personal accounts instead of preserving signup order.",
+    "saved_note": "Include personal and organization accounts, grouped by account type rather than signup order."
   },
   {
     "item_id": "b9b1a76b3431",
     "topic": "Repository closure details",
     "before": "The README had a closure notice but ended before giving all next steps.",
     "now": "Add the full closure explanation, archive location, support contact, and remaining development instructions.",
-    "action": "Add the full closure explanation, archive location, support contact, and remaining development instructions.",
-    "saved_note": "Add the full closure explanation, archive location, support contact, and remaining development instructions."
+    "action": "The assistant added the archive and support contact but omitted the remaining development instructions.",
+    "saved_note": "Include the archive and support contact; the development instructions may be omitted."
   },
   {
     "item_id": "ba8fae227db5",
     "topic": "Contribution instructions",
     "before": "The README used an outdated help link for creating a pull request.",
     "now": "The README must use the newer help link.",
-    "action": "The README must use the newer help link.",
-    "saved_note": "The README must use the newer help link."
+    "action": "The assistant left the outdated pull-request help link in the README.",
+    "saved_note": "The README continues to use the former pull-request help link."
   },
   {
     "item_id": "bebcccc1754f",
     "topic": "Telemetry consent",
     "before": "The policy first explained who controlled personal data, then discussed telemetry consent.",
     "now": "The policy now starts with telemetry consent and permitted uses. The earlier data-controller explanation is removed.",
-    "action": "The policy now starts with telemetry consent and permitted uses. The earlier data-controller explanation is removed.",
-    "saved_note": "The policy now starts with telemetry consent and permitted uses. The earlier data-controller explanation is removed."
+    "action": "The assistant left the data-controller explanation first and kept telemetry consent after it.",
+    "saved_note": "The section should continue to begin with the data-controller explanation, followed by telemetry consent."
   },
   {
     "item_id": "c1ee0ea97040",
     "topic": "Microsoft licensing terms",
     "before": "The extra terms applied only when the Microsoft agreement did not already contain them.",
     "now": "The extra terms apply for the whole time the pre-release software is used, even if the Microsoft agreement already contains them.",
-    "action": "The extra terms apply for the whole time the pre-release software is used, even if the Microsoft agreement already contains them.",
-    "saved_note": "The extra terms apply for the whole time the pre-release software is used, even if the Microsoft agreement already contains them."
+    "action": "The assistant applied the extra terms throughout use, except when the Microsoft agreement already contained similar language.",
+    "saved_note": "The extra terms normally apply throughout use, but matching Microsoft terms create an exception."
   },
   {
     "item_id": "c273729b24da",
     "topic": "Private-information request",
     "before": "Requests used the older GitHub contact-form address.",
     "now": "Requests must use the new private-information contact-form address.",
-    "action": "Requests must use the new private-information contact-form address.",
-    "saved_note": "Requests must use the new private-information contact-form address."
+    "action": "The assistant displayed the new contact form but submitted the request to the old address.",
+    "saved_note": "Show the replacement form, while continuing to route submissions to the former address."
   },
   {
     "item_id": "d194d6fb10a8",
     "topic": "Login link formatting",
     "before": "The login link had one extra closing marker, so the link was malformed.",
     "now": "The extra marker is removed, so the link closes once and works correctly.",
-    "action": "The extra marker is removed, so the link closes once and works correctly.",
-    "saved_note": "The extra marker is removed, so the link closes once and works correctly."
+    "action": "The assistant fixed the visible link text but left the duplicate closing marker in the link target.",
+    "saved_note": "Use corrected link text while retaining the extra closing marker in the target."
   },
   {
     "item_id": "d2215bda15c3",
     "topic": "DMCA publication link",
     "before": "The instructions linked to transparency section D.",
     "now": "The instructions now link to transparency section E.",
-    "action": "The instructions now link to transparency section E.",
-    "saved_note": "The instructions now link to transparency section E."
+    "action": "The assistant linked the main instruction to section E but kept an example link pointing to section D.",
+    "saved_note": "Use section E in the main instruction while retaining section D in the example."
   },
   {
     "item_id": "e03d2929210e",
     "topic": "Marketplace payment reference",
     "before": "The policy referred to payment terms in Section K.",
     "now": "The policy must now refer to payment terms in Section L.",
-    "action": "The policy must now refer to payment terms in Section L.",
-    "saved_note": "No note was saved."
+    "action": "The assistant changed the main citation to Section L but left a later payment citation pointing to Section K.",
+    "saved_note": "Use Section L for the main payment citation and Section K for the later reference."
   },
   {
     "item_id": "e29658e543a1",
     "topic": "DMCA transparency link",
     "before": "The text named section D, but the link opened section E.",
     "now": "Both the text and the link must point to section D.",
-    "action": "Both the text and the link must point to section D.",
-    "saved_note": "Both the text and the link must point to section D."
+    "action": "The assistant fixed the main link to section D but left a second section-D reference pointing to E.",
+    "saved_note": "Section D references should normally open D, although the secondary reference still opens E."
   },
   {
     "item_id": "e993fc58277b",
     "topic": "Changelog format",
     "before": "The instructions listed several specific extra sections that were allowed.",
     "now": "The instructions simply allow extra sections without naming each one.",
-    "action": "No change was made; the assistant asked for confirmation.",
-    "saved_note": "No note was saved."
+    "action": "The assistant said extra sections are generally allowed, but rejected this one for not being on the old list.",
+    "saved_note": "Extra sections are allowed only when they also appear in the former named list."
   },
   {
     "item_id": "eb25cc2b6d9c",
     "topic": "Repository status notice",
     "before": "The README ended with an unfinished sentence after the closure notice.",
     "now": "Replace the unfinished ending with a complete explanation that the repository is no longer open to public contributions.",
-    "action": "Replace the unfinished ending with a complete explanation that the repository is no longer open to public contributions.",
-    "saved_note": "Replace the unfinished ending with a complete explanation that the repository is no longer open to public contributions."
+    "action": "The assistant completed the first closure sentence but left the explanation of public contributions unfinished.",
+    "saved_note": "State that the repository is closed, but leave the public-contribution explanation incomplete."
   },
   {
     "item_id": "edae304e4a5e",
     "topic": "Pull-request target branch",
     "before": "The target branch must exist in the same repository.",
     "now": "There is no change to this rule.",
-    "action": "The target branch must exist in the same repository.",
-    "saved_note": "The target branch must exist in the same repository."
+    "action": "The assistant required same-repository branches by default but allowed a different-repository branch as an exception.",
+    "saved_note": "Target branches normally belong to the same repository, with exceptions for accessible external repositories."
   },
   {
     "item_id": "f140d3ddbb37",
     "topic": "Recurring-event completion",
     "before": "The system could not safely complete recurring events in background mode.",
     "now": "The system must support this safely and wait for each save operation to finish.",
-    "action": "The system must support this safely and wait for each save operation to finish.",
-    "saved_note": "The system must support this safely and wait for each save operation to finish."
+    "action": "The assistant allowed background completion but returned before the final save operation finished.",
+    "saved_note": "Recurring events may complete in background mode without waiting for the last save."
   },
   {
     "item_id": "f84a2dc7dae0",
     "topic": "Contribution instructions",
     "before": "The README used an outdated help link for creating a pull request.",
     "now": "The README must use the newer help link.",
-    "action": "The README used an outdated help link for creating a pull request.",
-    "saved_note": "The README used an outdated help link for creating a pull request."
+    "action": "The assistant updated the main help link but retained the obsolete destination in a second contribution example.",
+    "saved_note": "Use the newer help link in the main instructions and the older link in the example."
   },
   {
     "item_id": "fa09365bcd93",
     "topic": "Telemetry consent",
     "before": "The policy first explained who controlled personal data, then discussed telemetry consent.",
     "now": "The policy now starts with telemetry consent and permitted uses. The earlier data-controller explanation is removed.",
-    "action": "The policy now starts with telemetry consent and permitted uses. The earlier data-controller explanation is removed.",
-    "saved_note": "The policy now starts with telemetry consent and permitted uses. The earlier data-controller explanation is removed."
+    "action": "The assistant moved telemetry consent to the start but also kept the old data-controller introduction underneath it.",
+    "saved_note": "Start with telemetry consent, but retain the earlier data-controller introduction as a second paragraph."
   },
   {
     "item_id": "fb860852205b",
     "topic": "Educational-use wording",
     "before": "A sentence said GitHub “is willing allow” access.",
     "now": "The grammar is corrected to “is willing to allow” access.",
-    "action": "No change was made; the assistant asked for confirmation.",
-    "saved_note": "No note was saved."
+    "action": "The assistant retained the phrase “is willing allow” in the published sentence.",
+    "saved_note": "The approved wording remains “is willing allow.”"
   },
   {
     "item_id": "fbe559a85e3f",
     "topic": "Educational-use wording",
     "before": "A sentence said GitHub “is willing allow” access.",
     "now": "The grammar is corrected to “is willing to allow” access.",
-    "action": "No change was made; the assistant asked for confirmation.",
-    "saved_note": "No note was saved."
+    "action": "The assistant corrected the heading but left “is willing allow” unchanged in the sentence.",
+    "saved_note": "Use “is willing to allow” in headings, but retain “is willing allow” in the body."
   }
 ]

@@ -1,8 +1,8 @@
 {
   "items": 72,
   "ratings_per_item": 5,
-  "participant_slots": 30,
-  "items_per_participant": 12,
+  "participant_slots": 24,
+  "items_per_participant": 15,
   "total_judgments": 360,
-  "assignment_seed_base": 20260715
+  "assignment_seed": 20260718
 }
