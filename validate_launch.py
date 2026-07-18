@@ -14,6 +14,8 @@ def main():
     assert len(batches)==24 and set(map(len,batches.values()))=={15},"Need 24 batches of 15"
     assert all(len(v)==len(set(v)) for v in batches.values()),"A participant batch contains a duplicate item"
     assert all(len({groups[x] for x in v})==15 for v in batches.values()),"A participant sees two variants of one source scenario"
+    control_ids={sorted(item for item in groups if groups[item]==case)[0] for case in set(groups.values())}
+    assert all(sum(item in control_ids for item in batch)==5 for batch in batches.values()),"Each batch needs five controls and ten mechanism items"
     assert set(counts)==set(ids) and set(counts.values())=={5},"Every item must receive exactly five ratings"
     required={"item_id","topic","before","now","action","saved_note"}
     assert all(required==set(x) and all(str(x[k]).strip() for k in required) for x in tasks),"Task schema/empty text error"

@@ -5,6 +5,13 @@ Firestore. Everyone uses one study URL; Prolific supplies participant parameters
 and the site transactionally assigns one of twenty-four balanced 15-item batches.
 All 72 complete items receive exactly five independent ratings.
 
+The v3 item set contains 24 same-label controls and 48 mechanism-sensitive
+items in which the candidate action and candidate saved note have different
+reference states. Every participant receives exactly five controls and ten
+mechanism items. The six off-diagonal current/legacy/mixed combinations are
+balanced in the private research key; reference labels are not shipped to the
+participant client.
+
 ## What participants see
 
 1. Ethics approval, contact email, duration, payment, risks, data handling,

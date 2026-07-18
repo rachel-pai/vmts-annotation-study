@@ -10,7 +10,10 @@ groups=json.loads((ROOT/"data/task-groups.json").read_text())
 by_case={}
 for item in items: by_case.setdefault(groups[item],[]).append(item)
 cases=sorted(by_case); random.Random(20260718).shuffle(cases)
-for case in cases: random.Random(f"20260718|{case}").shuffle(by_case[case])
+# v3 stores the control first and the two action/write-decoupled mechanism
+# variants second and third. Keeping that order gives every participant five
+# controls and ten mechanism items while retaining exact fivefold coverage.
+for case in cases: by_case[case].sort()
 assert len(cases)==24 and set(map(len,by_case.values()))=={3}
 batches={f"P{b+1}":[] for b in range(24)}
 for wave in range(5):
