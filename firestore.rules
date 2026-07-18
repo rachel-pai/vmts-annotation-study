@@ -66,9 +66,11 @@ service cloud.firestore {
       allow get: if request.auth != null;
       allow list, delete: if false;
       allow create: if request.auth != null
-        && request.resource.data.keys().hasOnly(['participantKey','batchId','uid','studyKey','sessionKey','assignedAt'])
+        && request.resource.data.keys().hasOnly(['participantKey','batchId','uid','studyKey','sessionKey','assignedAt','consentVersion','consentedAt','ageConfirmed'])
         && request.resource.data.participantKey == participantKey
         && request.resource.data.uid == request.auth.uid && validBatch(request.resource.data.batchId)
+        && request.resource.data.consentVersion is string && request.resource.data.consentVersion.size() > 0
+        && request.resource.data.ageConfirmed == true
         && getAfter(/databases/$(database)/documents/batchClaims/$(request.resource.data.batchId)).data.participantKey == participantKey;
       allow update: if request.auth != null && resource.data.uid == request.auth.uid
         && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['completedAt','completedItems'])

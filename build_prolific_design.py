@@ -13,6 +13,14 @@ for wave in range(5):
 counts=Counter(x for b in batches.values() for x in b)
 assert len(batches)==30 and set(map(len,batches.values()))=={12} and set(counts.values())=={5}
 (ROOT/"data/prolific-batches.json").write_text(json.dumps(batches,indent=2)+"\n")
+(ROOT/"data/design-summary.json").write_text(json.dumps({
+    "items":72,
+    "ratings_per_item":5,
+    "participant_slots":30,
+    "items_per_participant":12,
+    "total_judgments":360,
+    "assignment_seed_base":20260715,
+},indent=2)+"\n")
 batch_checks="\n        || ".join(f"(batchId == '{b}' && itemId in {json.dumps(v,separators=(',',':'))})" for b,v in batches.items())
 rules=(ROOT/"firestore.rules").read_text()
 import re

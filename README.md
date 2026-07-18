@@ -2,16 +2,15 @@
 
 Static GitHub Pages front end with Firebase Anonymous Authentication and Cloud
 Firestore. Everyone uses one study URL; Prolific supplies participant parameters,
-and the site transactionally assigns one of twelve balanced 18-item batches.
-The source experiment was regenerated with expanded schemas: all 72 items are
-complete, with exactly three independent ratings per item.
+and the site transactionally assigns one of thirty balanced 12-item batches.
+All 72 complete items receive exactly five independent ratings.
 
 ## What participants see
 
-1. Ethics approval, researcher contact, duration, payment, risks, data handling,
-   withdrawal wording, and three explicit consent confirmations on the homepage.
+1. Ethics approval, contact email, duration, payment, risks, data handling,
+   withdrawal wording, and two explicit consent confirmations on the homepage.
 2. Prolific link validation and automatic stable batch assignment.
-3. A worked example, plain-language labels, and 18 annotation items.
+3. A worked example, plain-language labels, and 12 annotation items.
 4. A configured Prolific completion code and return button.
 
 Recruit participants who are comfortable reading software instructions and
@@ -36,11 +35,12 @@ These remain pseudonymous research data and must still be handled accordingly.
 If assignments change, run:
 
 ```bash
-python3 annotation-site/build_prolific_design.py
+python3 build_prolific_design.py
 ```
 
-This rebuilds `data/prolific-batches.json` and the matching rule allowlists. It
-fails unless all 72 complete items receive exactly three ratings.
+This rebuilds `data/prolific-batches.json`, `data/design-summary.json`, and the
+matching rule allowlists. It fails unless all 72 complete items receive exactly
+five ratings.
 
 ## Prolific URL
 
@@ -51,18 +51,23 @@ https://YOUR_ACCOUNT.github.io/YOUR_REPOSITORY/?PROLIFIC_PID={{%PROLIFIC_PID%}}&
 ```
 
 Set the same completion code in Prolific and `study-config.js`. Recruit exactly
-12 completed participants for the current fixed design. Use Prolific replacement
+30 completed participants for the current fixed design. Use Prolific replacement
 recruitment for returned/timed-out submissions; a claimed but abandoned batch must
 be released administratively before a replacement can receive it.
 
 ## Local preview
 
 ```bash
-python3 -m http.server 8765 --directory annotation-site
+python3 -m http.server 8765
 ```
 
 The production lock remains active locally until real study configuration is
 present. Do not insert invented ethics details just to bypass it.
+
+Run `python3 validate_launch.py` during editing. Immediately before recruitment,
+run `python3 validate_launch.py --require-live`; it must pass before sharing the
+production Prolific link. Preview mode remains available at `?preview=1` and
+never writes to Firebase.
 
 ## Export
 

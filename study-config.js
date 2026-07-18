@@ -7,15 +7,16 @@ export const studyConfig = {
     institution: "CONFIGURE_INSTITUTION",
     reference: "CONFIGURE_APPROVAL_REFERENCE",
     approvedDate: "CONFIGURE_APPROVAL_DATE",
-    contactName: "CONFIGURE_RESEARCHER_NAME",
     contactEmail: "CONFIGURE_RESEARCHER_EMAIL"
   },
   study: {
     estimatedMinutes: "CONFIGURE_ESTIMATED_MINUTES",
     payment: "CONFIGURE_PAYMENT_AND_RATE",
     risks: "Minimal risk: possible fatigue or mild frustration from text-classification tasks.",
-    withdrawal: "Participants may leave before final submission. After submission, withdrawal is possible only while the hashed Prolific identifier can still be linked by the research team."
+    withdrawal: "Participants may leave before final submission. After submission, withdrawal is possible only while the hashed Prolific identifier can still be linked by the research team.",
+    privacy: "Prolific identifiers are converted to one-way hashes. We store only consent status, answers, assignment information, and timestamps. Do not enter personal or confidential information."
   },
+  consentVersion: "2026-07-18-v1",
   prolific: {
     completionCode: "CONFIGURE_COMPLETION_CODE",
     completionUrl: "https://app.prolific.com/submissions/complete?cc=CONFIGURE_COMPLETION_CODE",
